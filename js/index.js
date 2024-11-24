@@ -1,22 +1,31 @@
 function showDiv(divId) {
-    // Prevent the default behavior of the link (which would reload the page)
+    // Prevent default behavior of anchor tags
     event.preventDefault();
-    
-    // Find the parent container
-    const contentWrapper = document.querySelector('.content-wrapper');
-    
-    // Get all divs inside the content-wrapper and hide them
-    const divs = contentWrapper.querySelectorAll('.content-div');
+
+    // Hide all divs inside the content-wrapper
+    const divs = document.querySelectorAll('.content-div');
     divs.forEach(div => {
       div.style.display = 'none';
     });
-    
-    // Show the specific div related to the clicked link
-    const divToShow = contentWrapper.querySelector('#' + divId);
+
+    // Show the selected div
+    const divToShow = document.getElementById(divId);
     if (divToShow) {
       divToShow.style.display = 'block';
     }
-  }  
+
+    // Optionally, you can manage the "active" link highlight
+    const links = document.querySelectorAll('.navbar .links a');
+    links.forEach(link => {
+      link.classList.remove('active'); // Remove active class from all links
+    });
+
+    // Add the "active" class to the clicked link
+    const activeLink = document.querySelector(`.navbar .links a[href="#${divId}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+  } 
 
 // JavaScript for Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
