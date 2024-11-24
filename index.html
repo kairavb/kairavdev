@@ -15,10 +15,11 @@
       <div class="links">
         <!-- Highlight div -->
         <div class="highlight" style="width: 0; left: 0;"></div>
-        <a href="#about" onclick="showDiv('about')" class="active">About</a>
-        <a href="#projects" onclick="showDiv('projects')">Projects</a>
-        <a href="#articles">Articles</a>
-        <a href="#contacts">Contacts</a>
+        <a href="#" onclick="showDiv('home')" class="active">Home</a>
+        <a href="#" onclick="showDiv('about')" >About</a>
+        <a href="#" onclick="showDiv('projects')">Projects</a>
+        <a href="#" onclick="showDiv('articles')">Articles</a>
+        <a href="#" onclick="showDiv('contacts')">Contacts</a>
       </div>
       <div class="hamburger">
         <span></span>
@@ -27,19 +28,40 @@
       </div>
     </div>
 
+    <!-- Content -->
     <div class="content-wrapper">
+      <!-- Home -->
+      <div id="home" class="content-div">
+        <h1>Welcome to the Home Section</h1>
+        <p style="margin-top: 500px;">Scroll down to see more content!</p>
+      </div>
+      
       <!-- About -->
-      <div id="about" class="content-div">
+      <div id="about" class="content-div" style="display: none;">
         <h1>Welcome to the About Section</h1>
-        <p>
-          This is a responsive website with a fixed navbar, curved borders, and content scrolling inside the box. 
-          The global scrollbar is disabled, and only the content inside the bright-bordered box can scroll.
-        </p>
         <p style="margin-top: 500px;">Scroll down to see more content!</p>
       </div>
 
       <!-- Projects -->
       <div id="projects" class="content-div" style="display: none;">
+        <h1>Welcome to the Projects Section</h1>
+        <p style="margin-top: 500px;">Scroll down to see more content!</p>
+      </div>
+
+      <!-- Articles -->
+      <div id="articles" class="content-div" style="display: none;">
+        <h1>Welcome to the Articles Section</h1>
+        <p style="margin-top: 500px;">Scroll down to see more content!</p>
+      </div>
+
+      <!-- Contacts -->
+      <div id="contacts" class="content-div" style="display: none;">
+        <h1>Welcome to the Contacts Section</h1>
+        <p style="margin-top: 500px;">Scroll down to see more content!</p>
+      </div>
+
+      <!-- other -->
+      <div id="other" class="content-div" style="display: none;">
         <h1>Welcome to the Projects Section</h1>
         <p style="margin-top: 500px;">Scroll down to see more content!</p>
       </div>
