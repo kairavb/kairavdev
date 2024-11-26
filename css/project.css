@@ -1,126 +1,127 @@
 /* Parent div styling */
 #projects {
-    text-align: center;
-  }
+  text-align: center;
+}
 
 #projects h3{
-    text-align: left;
-  }
+  text-align: left;
+}
 
-  /* Container for the boxes */
+/* Container for the boxes */
+.container-proj {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Strictly 3 columns max */
+  gap: 30px;
+  justify-items: center;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Description */
+#projects p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+/* Individual box styling */
+.container-proj .box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #111;
+}
+
+.container-proj .box:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Styling images */
+.container-proj .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.2);
+  transition: filter 0.3s ease;
+}
+
+.container-proj .box:hover img {
+  filter: grayscale(0);
+}
+
+/* Content overlay */
+.container-proj .box .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.container-proj .box:hover .content {
+  transform: translateY(0); /* Slide-up effect on hover */
+}
+
+/* Title inside box */
+.container-proj .box .content h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+
+/* Buttons inside box */
+.container-proj .box .content .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container-proj .box .content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #000;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.container-proj .box .content .btn:hover {
+  background: #e6e6e6;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
   .container-proj {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Strictly 3 columns max */
-    gap: 30px;
-    justify-items: center;
+    grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns for medium screens */
   }
-  #projects h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #fff;
-    display: inline-block;
-    padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .container-proj {
+    grid-template-columns: 1fr; /* Stack in a single column for small screens */
   }
-  
-  /* Description */
-  #projects p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #ccc;
-  }
-  
-  /* Individual box styling */
-  .container-proj .box {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border: 3px solid #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: #111;
-  }
-  
-  .container-proj .box:hover {
-    transform: scale(1.08);
-    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5);
-  }
-  
-  /* Styling images */
-  .container-proj .box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: grayscale(0.2);
-    transition: filter 0.3s ease;
-  }
-  
-  .container-proj .box:hover img {
-    filter: grayscale(0);
-  }
-  
-  /* Content overlay */
-  .container-proj .box .content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    text-align: center;
-    color: #fff;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-  }
-  
-  .container-proj .box:hover .content {
-    transform: translateY(0); /* Slide-up effect on hover */
-  }
-  
-  /* Title inside box */
-  .container-proj .box .content h3 {
-    margin: 10px 0;
-    font-size: 1.5rem;
-  }
-  
-  /* Buttons inside box */
-  .container-proj .box .content .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .container-proj .box .content .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    color: #000;
-    text-decoration: none;
-    background: #fff;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-  }
-  
-  .container-proj .box .content .btn:hover {
-    background: #e6e6e6;
-    transform: scale(1.05);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 1024px) {
-    .container-proj {
-      grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns for medium screens */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .container-proj {
-      grid-template-columns: 1fr; /* Stack in a single column for small screens */
-    }
-  }
+}
