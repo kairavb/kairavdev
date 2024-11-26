@@ -13,6 +13,7 @@
   grid-template-columns: repeat(3, 1fr); /* Strictly 3 columns max */
   gap: 30px;
   justify-items: center;
+  margin: 10px;
 }
 
 #projects h2 {
