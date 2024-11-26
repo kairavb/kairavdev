@@ -1,5 +1,103 @@
 /* ----about */
+/* About Me Section Styling */
+#about-me {
+    padding: 40px;
+    background: #000;
+    color: #fff;
+  }
+  
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* Left Side Image */
+  .about-image {
+    flex: 0 0 40%; /* Ensure the image takes up a maximum of 40% of the container width */
+    max-width: 400px; /* Cap the image width */
+    margin-right: 50px;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #fff;
+  }
+  
+  /* Right Side Details */
+  .about-details {
+    flex: 1;
+    color: #ccc;
+  }
+  
+  .about-details h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .about-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  .about-details ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .about-details ul li strong {
+    color: #fff;
+  }
+  
+  .about-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-image {
+      max-width: 70%; /* Image width reduced further for smaller screens */
+      margin: 0 auto 20px;
+    }
+  
+    .about-details h2 {
+      font-size: 2rem;
+    }
+  
+    .about-details ul li {
+      font-size: 1rem;
+    }
+  
+    .about-details p {
+      font-size: 0.9rem;
+    }
+  }  
+  
 
+/*  */
 body {
 background-color: #121212;
 color: #ffffff;
