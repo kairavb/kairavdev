@@ -1,82 +1,102 @@
-#projects {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 20px;
-}
+/* Parent div styling */
 
-.project-card {
-background-color: #1e1e1e;
-border-radius: 10px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-overflow: hidden;
-transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.project-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-}
-
-.project-image {
-width: 100%;
-height: 150px;
-object-fit: cover;
-}
-
-.project-card h2 {
-font-size: 1.5rem;
-margin: 20px;
-color: #ffffff;
-}
-
-.links {
-display: flex;
-justify-content: center;
-gap: 10px;
-margin: 20px;
-}
-
-.links a {
-text-decoration: none;
-padding: 10px 15px;
-font-size: 0.9rem;
-font-weight: bold;
-color: #ffffff;
-border-radius: 5px;
-transition: background-color 0.2s;
-}
-
-.links a.code {
-background-color: #2196f3;
-}
-
-.links a.code:hover {
-background-color: #1565c0;
-}
-
-.links a.live {
-background-color: #4caf50;
-}
-
-.links a.live:hover {
-background-color: #2e7d32;
-}
-
-@media (max-width: 600px) {
-h1 {
+  /* Container for the boxes */
+  .container-proj {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Strictly 3 columns max */
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  /* Individual box styling */
+  .container-proj .box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #111;
+  }
+  
+  .container-proj .box:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Styling images */
+  .container-proj .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.2);
+    transition: filter 0.3s ease;
+  }
+  
+  .container-proj .box:hover img {
+    filter: grayscale(0);
+  }
+  
+  /* Content overlay */
+  .container-proj .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .container-proj .box:hover .content {
+    transform: translateY(0); /* Slide-up effect on hover */
+  }
+  
+  /* Title inside box */
+  .container-proj .box .content h3 {
+    margin: 10px 0;
     font-size: 1.5rem;
-}
-
-.project-card h2 {
-    font-size: 1.2rem;
-}
-
-.links a {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-}
-
-.project-image {
-    height: 120px;
-}
-}
+  }
+  
+  /* Buttons inside box */
+  .container-proj .box .content .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .container-proj .box .content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: #000;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  .container-proj .box .content .btn:hover {
+    background: #e6e6e6;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .container-proj {
+      grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container-proj {
+      grid-template-columns: 1fr; /* Stack in a single column for small screens */
+    }
+  }

@@ -1,0 +1,202 @@
+/* ----about */
+
+body {
+background-color: #121212;
+color: #ffffff;
+font-family: 'Arial', sans-serif;
+margin: 0;
+padding: 0;
+}
+
+.skills-section {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+padding: 40px;
+padding-top: 0px;
+box-sizing: border-box;
+}
+
+.skills-content {
+flex: 1 1 50%;
+max-width: 600px;
+padding: 20px;
+}
+
+.skills-box {
+background-color: #1a1a1a;
+border-radius: 20px; /* More rounded corners */
+padding: 20px;
+margin-bottom: 20px;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.skills-box h2 {
+margin: 0 0 10px 0;
+font-size: 1.5rem;
+}
+
+.skills-box p {
+margin: 0;
+font-size: 1rem;
+color: #bbbbbb;
+}
+
+.skills-box:hover {
+background-color: #ffffff; /* Slightly lighter background on hover */
+color: #121212;
+transform: translateY(-5px); /* Lift effect */
+box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.skills-description {
+font-size: 1rem;
+color: #bbbbbb;
+margin-top: 20px;
+}
+
+.skills-description strong {
+color: #ffffff;
+}
+
+.skills-image {
+flex: 1 1 40%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.skills-image img {
+width: 100%;
+max-width: 400px;
+border-radius: 30px; /* More rounded corners for the image */
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.skills-image img:hover {
+transform: scale(1.05); /* Slight zoom-in effect on hover */
+box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+.skills-section {
+    flex-direction: column-reverse;
+    text-align: center;
+}
+
+.skills-content {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.skills-image img {
+    max-width: 300px;
+}
+}
+
+/*----Work section*/
+.work-section {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    }
+    
+.work-title {
+font-size: 3rem;
+margin-bottom: 20px;
+font-weight: bold;
+text-align: right;
+}
+.skills-title {
+font-size: 3rem;
+margin-bottom: 20px;
+font-weight: bold;
+}
+
+.work-list {
+border-top: 1px solid #333;
+}
+
+.work-item {
+display: grid;
+grid-template-columns: 1fr 1.5fr 2fr;
+gap: 20px;
+align-items: center;
+padding: 20px 0;
+border-bottom: 1px solid #333;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.work-column {
+padding-left: 20%;
+padding-right: 10%;
+display: flex;
+flex-direction: column;
+}
+
+.duration span {
+font-size: 1.2rem;
+}
+
+.duration small {
+font-size: 0.9rem;
+color: #aaaaaa;
+}
+
+.company-name {
+font-size: 1.5rem;
+margin: 0;
+}
+
+.role p {
+font-size: 1rem;
+color: #aaaaaa;
+margin: 0;
+}
+
+.work-item:hover {
+background-color: #ffffff;
+color: #121212;
+cursor: pointer;
+}
+
+.work-item:hover .company-name,
+.work-item:hover .role p {
+color: #121212;
+}
+
+.work-experience {
+margin-top: 20px;
+text-align: right;
+}
+
+.work-experience p {
+margin: 0;
+font-size: 1rem;
+color: #aaaaaa;
+}
+
+.work-experience strong {
+font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+.work-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.work-column {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.company-name,
+.role p {
+    font-size: 1.2rem;
+}
+}
