@@ -1,0 +1,103 @@
+/* Contacts Section Styling */
+#contacts {
+    text-align: center;
+  }
+#contacts h3{
+    text-align: left;
+  }
+  
+  /* Container */
+  .contacts-container {
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Title */
+  #contacts h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  /* Description */
+  #contacts p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ccc;
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Form Group */
+  .contact-form .form-group {
+    position: relative;
+    width: 100%; /* Ensure form group spans full width */
+  }
+  
+  /* Inputs and Textarea */
+  .contact-form .form-group input,
+  .contact-form .form-group textarea {
+    width: 100%; /* Full width */
+    padding: 15px;
+    font-size: 1rem;
+    color: #fff;
+    background: #111;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition: border 0.3s ease, background 0.3s ease;
+  }
+  
+  .contact-form .form-group input:focus,
+  .contact-form .form-group textarea:focus {
+    border-color: #e6e6e6;
+    background: #222;
+  }
+  
+  /* Submit Button */
+  .contact-form .btn {
+    width: 100%; /* Match the width of inputs */
+    padding: 15px;
+    font-size: 1rem;
+    color: #000;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box; /* Consistent with inputs */
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .contact-form .btn:hover {
+    background: #e6e6e6;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    #contacts h2 {
+      font-size: 2rem;
+    }
+  
+    #contacts p {
+      font-size: 1rem;
+    }
+  
+    .contact-form .btn {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  }
+  
