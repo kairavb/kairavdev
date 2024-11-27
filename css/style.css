@@ -88,6 +88,14 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .container {
+    margin: 0px;
+    border-radius: 0px;
+    max-height: 100vh;
+    border: none;
+    max-height: 90vh;
+  }
+  
   .navbar .links {
     display: none; /* Hide links by default on small screens */
     flex-direction: column;
