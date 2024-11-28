@@ -11,19 +11,20 @@
   <link rel="stylesheet" href="/css/project.css">
   <link rel="stylesheet" href="/css/contact.css">
   <link rel="stylesheet" href="/css/article.css">
+  <link rel="shortcut icon" href="imgs/fav.png" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <!-- Navbar -->
-    <div class="navbar">
+    <header class="navbar">
       <div class="brand">Kairav Bhatia</div>
       <div class="links">
         <!-- Highlight div -->
         <div class="highlight" style="width: 0; left: 0;"></div>
         <a href="#" onclick="showDiv('home')" class="active">Home</a>
         <a href="#" onclick="showDiv('about')" >About</a>
-        <a href="#" onclick="showDiv('projects')">Projects</a>
+        <a id="projectnav" href="#" onclick="showDiv('projects')">Projects</a>
         <a href="#" onclick="showDiv('articles')">Blogs</a>
         <a href="#" onclick="showDiv('contacts')">Contacts</a>
         <!-- <a href="#" onclick="showDiv('other')">Other</a> -->
@@ -33,10 +34,10 @@
         <span></span>
         <span></span>
       </div>
-    </div>
+    </header>
 
     <!-- Content -->
-    <div class="content-wrapper">
+    <main class="content-wrapper">
 
 
       <!-- Home -->
@@ -51,7 +52,7 @@
           <p class="description">
             My goal is to <em>write maintainable, clean,</em> and <em>efficient code</em> to make development enjoyable.
           </p>
-          <a href="#" class="btn">Projects →</a>
+          <a href="#" onclick="triggerLinkClick();return false;" class="btn">Projects →</a>
         </div>
 
 
@@ -373,15 +374,15 @@
             </a>
           </div>
           <p>Have questions or want to work together? Fill out the form below! <br><em style="color: aliceblue;">It Actually Works!</em></p>
-          <form class="contact-form">
+          <form class="contact-form" action="https://formspree.io/f/xzzbjwez" method="post">
             <div class="form-group">
-              <input type="text" id="name" placeholder="Your Name" required />
+              <input name="name" type="text" id="name" placeholder="Your Name" required />
             </div>
             <div class="form-group">
-              <input type="email" id="email" placeholder="Your Email" required />
+              <input name="email" type="email" id="email" placeholder="Your Email" required />
             </div>
             <div class="form-group">
-              <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+              <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn">Send Message</button>
           </form>
@@ -396,7 +397,7 @@
       </div>
 
 
-    </div>
+    </main>
   </div>
 </body>
 <script src="/js/index.js"></script>

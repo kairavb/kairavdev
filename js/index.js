@@ -1,3 +1,8 @@
+function triggerLinkClick() {
+  const link = document.getElementById('projectnav');
+  link.click();
+}
+
 function showDiv(divId) {
     // Prevent default behavior of anchor tags
     event.preventDefault();
