@@ -36,7 +36,7 @@
         <a href="#" onclick="showDiv('about')" >About</a>
         <a id="projectnav" href="#" onclick="showDiv('projects')">Projects</a>
         <!-- <a href="#" onclick="showDiv('articles')">Blogs</a> -->
-        <a href="#" onclick="showDiv('contacts')">Contacts</a>
+        <a id="contactnav" href="#" onclick="showDiv('contacts')">Contacts</a>
         <!-- <a href="#" onclick="showDiv('other')">Other</a> -->
       </div>
       <div class="hamburger">
@@ -314,6 +314,12 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="cbtn">
+          <p id="cbtnp">
+            Loved my projects? Contact me
+          </p>
+          <a href="#" onclick="triggerLinkClick('contactnav');return false;" class="cbtn">Contact →</a>
         </div>
       </div>
 

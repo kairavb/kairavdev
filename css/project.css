@@ -114,6 +114,29 @@
   transform: scale(1.05);
 }
 
+.cbtn {
+  margin-top: 50px;
+}
+
+.cbtn a {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5px;
+  margin-bottom: 10px;
+  color: #111;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cbtn a:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .container-proj {
@@ -124,5 +147,9 @@
 @media (max-width: 768px) {
   .container-proj {
     grid-template-columns: 1fr; /* Stack in a single column for small screens */
+  }
+  .cbtn a{
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
