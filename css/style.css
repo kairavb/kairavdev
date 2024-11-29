@@ -42,6 +42,11 @@ body {
   font-weight: bold;
 }
 
+.brand a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .navbar .links {
   display: flex;
   gap: 20px;

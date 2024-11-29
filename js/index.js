@@ -1,5 +1,5 @@
-function triggerLinkClick() {
-  const link = document.getElementById('projectnav');
+function triggerLinkClick(divId) {
+  const link = document.getElementById(divId);
   link.click();
 }
 
