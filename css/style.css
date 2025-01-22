@@ -8,6 +8,10 @@ body {
   overflow: hidden; /* Disable global scrollbar */
 }
 
+footer {
+  align-self: center;
+}
+
 .container {
   border: 2px solid #fff; /* Bright border */
   border-radius: 20px; /* Rounded corners */
