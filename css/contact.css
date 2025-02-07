@@ -67,6 +67,10 @@
   background: #222;
 }
 
+input {
+  font-family: monospace;
+}
+
 /* Submit Button */
 .contact-form .btn {
   width: 100%; /* Match the width of inputs */
