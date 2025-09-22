@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
           linksContainer.classList.remove('visible');
+          const activeLink = document.querySelector('.navbar a.active');
+          if (activeLink) moveHighlight(activeLink);
         }
       });
     });
