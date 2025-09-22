@@ -238,6 +238,11 @@
   color: #aaaaaa;
 }
 
+.role small {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
+
 .company-name {
   font-size: 1.5rem;
   margin: 0;
