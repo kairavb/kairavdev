@@ -105,6 +105,8 @@ footer p{
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  padding: 10px;
+  margin-left: 10px;
 }
 
 .navbar .hamburger span {
@@ -121,7 +123,6 @@ footer p{
     border-radius: 0px;
     max-height: 100vh;
     border: none;
-    max-height: 90vh;
   }
   
   .navbar .links {
@@ -143,10 +144,7 @@ footer p{
 
   .navbar .links.visible {
     display: flex; /* Show links when the menu is toggled */
-  }
-
-  .navbar .highlight {
-    display: none; /* Disable highlight background in stacked view */
+    margin-top: 10px;
   }
 
   .navbar .links a.active {
