@@ -37,17 +37,27 @@
   <div class="container">
     <!-- Navbar -->
     <header class="navbar">
-      <div class="brand"><a href="#" onclick="triggerLinkClick('homenav');return false;">Kairav Bhatia</a></div>
+      <div class="highlight" id="highlight"></div>
+      
+      <div class="brand">
+        <a href="#" onclick="showDiv('home', event);return false;">Kairav Bhatia</a>
+      </div>
+      
       <div class="links">
         <!-- Highlight div -->
-        <div class="highlight" style="width: 0; left: 0;"></div>
-        <a id="homenav" href="#" onclick="showDiv('home')" class="active">Home</a>
-        <a href="#" onclick="showDiv('about')" >About</a>
-        <a id="projectnav" href="#" onclick="showDiv('projects')">Projects</a>
-        <!-- <a href="#" onclick="showDiv('articles')">Blogs</a> -->
-        <a id="contactnav" href="#" onclick="showDiv('contacts')">Contacts</a>
+        <!-- <a id="homenav" href="#" onclick="showDiv('home')" class="active">Home</a> -->
+        <a href="#" onclick="showDiv('about', event)" >About</a>
+        <a id="projectnav" href="#" onclick="showDiv('projects', event)">Projects</a>
+        <a href="#" onclick="showDiv('articles', event)">Experiences</a>
+        <a href="#" onclick="showDiv('articles', event)">Achievements</a>
+        <a href="#" onclick="showDiv('articles', event)">Blogs</a>
         <!-- <a href="#" onclick="showDiv('other')">Other</a> -->
       </div>
+
+      <div class="right-links">
+        <a id="contactnav" href="#" onclick="showDiv('contacts', event)">Contacts</a>
+      </div>
+
       <div class="hamburger">
         <span></span>
         <span></span>

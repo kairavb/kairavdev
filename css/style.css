@@ -12,6 +12,14 @@ footer {
   align-self: center;
 }
 
+footer p{
+  display: block;
+  text-align: center;
+  margin: 0;
+  margin-top: 2em;
+  padding: 0;
+}
+
 .container {
   border: 2px solid #fff; /* Bright border */
   border-radius: 20px; /* Rounded corners */
@@ -43,21 +51,24 @@ footer {
 
 .navbar .brand {
   font-size: 1.5em;
-  font-weight: bold;
-}
-
-.brand a {
-  color: #fff;
-  text-decoration: none;
+  flex: 1;
 }
 
 .navbar .links {
   display: flex;
   gap: 20px;
-  position: relative;
+  flex: 2;
+  justify-content: center;
 }
 
-.navbar .links a {
+.navbar .right-links {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.navbar a {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
@@ -67,7 +78,15 @@ footer {
   transition: color 0.3s ease; /* Smooth transition for color */
 }
 
-.navbar .links a.active {
+.navbar .brand a {
+  font-weight: bold;
+}
+
+.navbar a.brand {
+  font-weight: bold;
+}
+
+.navbar a.active {
   color: #000; /* Black text for active link */
 }
 
@@ -93,14 +112,6 @@ footer {
   height: 3px;
   background-color: #fff;
   border-radius: 2px;
-}
-
-footer p{
-  display: block;
-  text-align: center;
-  margin: 0;
-  margin-top: 2em;
-  padding: 0;
 }
 
 /* Responsive Design */
