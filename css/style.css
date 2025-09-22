@@ -82,8 +82,9 @@ footer p{
   font-weight: bold;
 }
 
-.navbar a.brand {
+.navbar .right-links a {
   font-weight: bold;
+  font-size: large;
 }
 
 .navbar a.active {
