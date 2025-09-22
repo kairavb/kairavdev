@@ -55,8 +55,21 @@ linksArray.forEach((link) => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+// Make moveHighlight globally accessible
+function moveHighlight(element) {
   const highlight = document.getElementById('highlight');
+  const navbar = document.querySelector('.navbar');
+
+  const rect = element.getBoundingClientRect();
+  const navbarRect = navbar.getBoundingClientRect();
+
+  highlight.style.width = `${rect.width}px`;
+  highlight.style.height = `${rect.height}px`;
+  highlight.style.left = `${rect.left - navbarRect.left}px`;
+  highlight.style.top = `${rect.top - navbarRect.top}px`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
 
   // Combine all clickable links into one array
@@ -74,18 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Highlight movement logic
-  function moveHighlight(element) {
-    const rect = element.getBoundingClientRect();
-    const navbarRect = navbar.getBoundingClientRect();
-
-    highlight.style.width = `${rect.width}px`;
-    highlight.style.height = `${rect.height}px`;
-    highlight.style.left = `${rect.left - navbarRect.left}px`;
-    highlight.style.top = `${rect.top - navbarRect.top}px`;
-  }
-
-  // Adjust on resize
+  // Adjust highlight on window resize
   window.addEventListener('resize', () => {
     const activeLink = document.querySelector('.navbar a.active') || defaultLink;
     moveHighlight(activeLink);

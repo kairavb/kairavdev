@@ -45,17 +45,15 @@
       
       <div class="links">
         <!-- Highlight div -->
-        <!-- <a id="homenav" href="#" onclick="showDiv('home')" class="active">Home</a> -->
-        <a href="#" onclick="showDiv('about', event)" >About</a>
-        <a id="projectnav" href="#" onclick="showDiv('projects', event)">Projects</a>
-        <a href="#" onclick="showDiv('articles', event)">Experiences</a>
-        <a href="#" onclick="showDiv('articles', event)">Achievements</a>
-        <a href="#" onclick="showDiv('articles', event)">Blogs</a>
-        <!-- <a href="#" onclick="showDiv('other')">Other</a> -->
+        <a href="#" id="projectnav" onclick="showDiv('projects', event)">Projects</a>
+        <a href="#" id="projectnav" onclick="showDiv('experiences', event)">Experiences</a>
+        <a href="#" id="projectnav" onclick="showDiv('achievements', event)">Achievements</a>
+        <a href="#" id="projectnav" onclick="showDiv('blogs', event)">Blogs</a>
+        <a href="#" id="projectnav" onclick="showDiv('other', event)">Other</a>
       </div>
 
       <div class="right-links">
-        <a id="contactnav" href="#" onclick="showDiv('contacts', event)">Contacts</a>
+        <a href="#" id="contactnav" onclick="showDiv('contacts', event)">Contact</a>
       </div>
 
       <div class="hamburger">
@@ -98,15 +96,15 @@
           <a href="mailto:kairavbhatia8@gmail.com" target="_blank" class="social-link">
             <i class="fas fa-envelope"></i> Email
           </a>
-          <a href="https://docs.google.com/document/d/1eeHvy7YKLHrBrZG7FhGA4qIXFFtq2hn7Rxujya5nCg0/edit?usp=sharing" target="_blank" class="social-link">
-            <i class="fas fa-file-alt"></i> Resume
-          </a>
           <a href="https://leetcode.com/u/kairavb/" target="_blank" class="social-link">
-              <i class="fas fa-code"></i> LeetCode
+            <i class="fas fa-code"></i> LeetCode
           </a>
           <a href="https://codeforces.com/profile/kairav/" target="_blank" class="social-link">
-              <i class="fas fa-code"></i> CodeForces
+            <i class="fas fa-code"></i> CodeForces
           </a>
+          <!-- <a href="" target="_blank" class="social-link">
+          <i class="fas fa-file-alt"></i> Resume
+          </a> -->
           <!-- <a href="#" target="_blank" class="social-link">
             <i class="fab fa-youtube"></i> YouTube
           </a> -->
@@ -117,14 +115,8 @@
             <i class="fab fa-telegram-plane"></i> Telegram
           </a> -->
         </div>
-      </div>
 
-
-      <!-- About -->
-      <div id="about" class="content-div" style="display: none;">
-        <h3>... /About ...</h3>
-
-
+  
         <div id="about-me">
           <div class="about-container">
             <div class="about-image">
@@ -144,8 +136,8 @@
             </div>
           </div>
         </div>
-
-
+  
+  
         <div class="work-section">
           <h1 class="work-title">Achievements</h1>
           <div class="work-list">
@@ -193,8 +185,8 @@
             <strong>Being Born!</strong>
           </div>
         </div>
-
-
+  
+  
         <h1 class="skills-title">Skills</h1>
         <div class="skills-section">
           <div class="skills-content">
@@ -224,8 +216,8 @@
             <img src="/imgs/me2.webp" alt="Profile image" />
           </div>
         </div>        
-
-
+  
+  
         <div class="work-section">
           <h1 class="work-title">Work</h1>
           <div class="work-list">
@@ -388,8 +380,26 @@
       </div>
 
 
-      <!-- Articles -->
-      <div id="articles" class="content-div" style="display: none;">
+      <!-- Experiences -->
+      <div id="experiences" class="content-div" style="display: none;">
+        <h3>... /Experiences ...</h3>
+        <h1>Welcome to the Experiences Section</h1>
+        <p style="margin-top: 500px;">Scroll down to see more content!</p>
+        <p style="margin-top: 500px;">End</p>
+      </div>
+
+
+      <!-- Achievements -->
+      <div id="achievements" class="content-div" style="display: none;">
+        <h3>... /Achievements ...</h3>
+        <h1>Welcome to the Achievements Section</h1>
+        <p style="margin-top: 500px;">Scroll down to see more content!</p>
+        <p style="margin-top: 500px;">End</p>
+      </div>
+
+
+      <!-- Blogs -->
+      <div id="blogs" class="content-div" style="display: none;">
         <h3>... /Blogs ...</h3>
 
 
@@ -446,9 +456,9 @@
             <a href="mailto:kairavbhatia8@gmail.com" target="_blank" class="social-link">
               <i class="fas fa-envelope"></i> Email
             </a>
-            <a href="https://docs.google.com/document/d/1eeHvy7YKLHrBrZG7FhGA4qIXFFtq2hn7Rxujya5nCg0/edit?usp=sharing" target="_blank" class="social-link">
+            <!-- <a href="" target="_blank" class="social-link">
               <i class="fas fa-file-alt"></i> Resume
-            </a>
+            </a> -->
             <a href="https://leetcode.com/u/kairavb/" target="_blank" class="social-link">
               <i class="fas fa-code"></i> LeetCode
             </a>
@@ -475,8 +485,10 @@
 
       <!-- other -->
       <div id="other" class="content-div" style="display: none;">
-        <h1>Welcome to the Projects Section</h1>
+        <h3>... /Other ...</h3>
+        <h1>Welcome to the Other Section</h1>
         <p style="margin-top: 500px;">Scroll down to see more content!</p>
+        <p style="margin-top: 500px;">End</p>
       </div>
 
       <footer>
