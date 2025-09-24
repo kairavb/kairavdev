@@ -117,6 +117,12 @@ footer p{
   border-radius: 2px;
 }
 
+@media (max-width: 1000px) {
+  #sname {
+    display: none;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {

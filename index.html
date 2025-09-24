@@ -40,7 +40,7 @@
       <div class="highlight" id="highlight"></div>
       
       <div class="brand">
-        <a href="#" onclick="showDiv('home', event);return false;">Kairav Bhatia</a>
+        <a href="#" onclick="showDiv('home', event);return false;">Kairav <span id="sname">Bhatia</span></a>
       </div>
       
       <div class="links">
@@ -489,7 +489,7 @@
               <input name="email" type="email" id="email" placeholder="Your Email" required />
             </div>
             <div class="form-group">
-              <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+              <textarea name="message" id="message" rows="5" placeholder="Your Message" required minlength="5"></textarea>
             </div>
             <button type="submit" class="btn">Send Message</button>
           </form>
