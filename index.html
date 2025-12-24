@@ -48,7 +48,7 @@
         <a href="#" id="projectnav" onclick="showDiv('projects', event)">Projects</a>
         <a href="#" id="projectnav" onclick="showDiv('experiences', event)">Experiences</a>
         <a href="#" id="projectnav" onclick="showDiv('achievements', event)">Achievements</a>
-        <a href="#" id="projectnav" onclick="showDiv('blogs', event)">Blogs</a>
+        <a href="#" id="projectnav" onclick="showDiv('blogs', event), showToast()">Blogs</a>
         <a href="#" id="projectnav" onclick="showDiv('other', event)">Other</a>
       </div>
 
@@ -66,6 +66,14 @@
     <!-- Content -->
     <main class="content-wrapper">
 
+      <div id="toast" class="toast">
+        <div class="toast-content">
+          <span class="icon"></span>
+          <span class="message">Error ID:3304</span>
+          <span class="close-btn" onclick="hideToast()">✕</span>
+        </div>
+        <div class="progress"></div>
+      </div>
 
       <!-- Home -->
       <div id="home" class="content-div">

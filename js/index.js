@@ -102,3 +102,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// ====================
+// Toast Notification Logic
+// ====================
+
+let toastTimeout;
+
+function showToast() {
+  const toast = document.getElementById("toast");
+  const progress = toast.querySelector(".progress");
+
+  // Reset animation
+  progress.style.animation = "none";
+  void progress.offsetWidth;  // trigger reflow
+  progress.style.animation = "toastProgress 3s linear forwards";
+
+  toast.classList.add("show");
+
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
+    hideToast();
+  }, 3000);
+}
+
+function hideToast() {
+  const toast = document.getElementById("toast");
+  toast.classList.remove("show");
+}
