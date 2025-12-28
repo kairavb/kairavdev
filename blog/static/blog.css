@@ -1,0 +1,131 @@
+
+    /* Blog Post Styles in Dark Theme */
+    .blog-post {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #1a1a1a;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      line-height: 1.7;
+    }
+
+    .blog-post h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    .post-meta {
+      text-align: center;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .post-image {
+      width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 10px;
+    }
+
+    .post-content p {
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .post-content h2 {
+      margin-top: 3rem;
+      font-size: 1.8rem;
+      color: #fff;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 0.5rem;
+    }
+
+    .post-content h3 {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    .post-content ul {
+      padding-left: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .post-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .post-content blockquote {
+      border-left: 4px solid #fff;
+      padding-left: 1rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #ccc;
+      background: #222;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    .post-content code {
+      background: #333;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .post-content pre {
+      background: #333;
+      padding: 1rem;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    .post-footer {
+      margin-top: 3rem;
+      border-top: 1px solid #444;
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .share p {
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+
+    .share button {
+      background-color: #333;
+      border: none;
+      margin: 5px 10px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      color: #fff;
+      transition: background 0.3s;
+    }
+
+    .share button:hover {
+      background-color: #555;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .blog-post {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      .blog-post h1 {
+        font-size: 2rem;
+      }
+
+      .post-content h2 {
+        font-size: 1.5rem;
+      }
+    }

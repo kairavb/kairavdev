@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic SEO -->
+  <meta charset="UTF-8">
+  <title>ATS Benchmark – Join the Waitlist</title>
+  <meta name="description" content="Benchmark your resume across multiple ATS systems. Get early access and free resume scans.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Open Graph (for sharing) -->
+  <meta property="og:title" content="ATS Benchmark">
+  <meta property="og:description" content="See how your resume performs across real Applicant Tracking Systems.">
+  <meta property="og:type" content="website">
+
+  <!-- Theme -->
+  <style>
+    :root {
+      --background: #fafafa;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --primary-soft: #eff6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 72px 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+    }
+
+    p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .card {
+      max-width: 520px;
+      margin-top: 40px;
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      margin-top: 14px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-soft);
+    }
+
+    button {
+      width: 100%;
+      margin-top: 16px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+    }
+
+    .note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .features {
+      margin-top: 64px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .feature {
+      padding: 22px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .feature p {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 72px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <span class="badge">Launching Soon</span>
+
+    <h1>Know How Your Resume Performs<br>Across ATS Systems</h1>
+    <p>
+      Upload your resume and benchmark it against multiple Applicant Tracking
+      Systems with clear, actionable feedback.
+    </p>
+
+    <section class="card">
+      <form id="waitlist-form" aria-label="Join waitlist form">
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email address"
+          required
+          aria-label="Email address"
+        >
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <div class="note" id="form-note">
+        Early users get free scans and priority access.
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>Multi-ATS Benchmark</h3>
+        <p>See how your resume parses across different ATS engines.</p>
+      </div>
+      <div class="feature">
+        <h3>Clear Improvements</h3>
+        <p>Understand what to fix — formatting, keywords, structure.</p>
+      </div>
+      <div class="feature">
+        <h3>Built for Hiring</h3>
+        <p>Designed around how recruiters actually screen resumes.</p>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 ATS Benchmark. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    const form = document.getElementById("waitlist-form");
+    const note = document.getElementById("form-note");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = form.email.value;
+
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      });
+
+      if (response.ok) {
+        note.textContent = "✅ You're on the waitlist!";
+        form.reset();
+      } else {
+        note.textContent = "❌ Something went wrong. Please try again.";
+      }
+    });
+  </script>
+</body>
+</html>
