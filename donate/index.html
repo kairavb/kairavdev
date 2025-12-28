@@ -3,108 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Linux: Mastering the Open-Source Operating System - Kairav Bhatia</title>
+  <title>Support My Work</title>
+
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="stylesheet" href="/static/css/blog.css">
   <link rel="shortcut icon" href="/static/imgs/fav.png" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
+
+<body>
   <div class="container scroll-thin">
+
     <!-- Navbar -->
     <header class="navbar">
       <div class="highlight" id="highlight"></div>
-      
-      <div class="brand">
-        <a href="/index.html">About <span id="sname">Author</span></a>
-      </div>
-      
-      <div class="right-links">
-        <a href="/">Donate</a>
-      </div>
 
+      <div class="brand">
+        <a href="/index.html">Kairav <span id="sname">Bhatia</span></a>
+      </div>
     </header>
 
     <!-- Content -->
-<main>
-  <div class="blog-post">
-    <h1>Support Our Work</h1>
-    <div class="post-meta">
-      Help us keep creating quality content
-    </div>
+    <main class="content-wrapper">
+      <article class="blog-post">
 
-    <img
-      src="donate.jpg"
-      alt="Support illustration"
-      class="post-image"
-    />
+        <header class="post-header">
+          <h1 class="post-title">Support My Work</h1>
+          <p class="post-meta">
+            If you find my work useful, consider supporting it
+          </p>
+        </header>
 
-    <div class="post-content">
-      <p>
-        If you enjoy our content and want to support what we do, consider making a donation.
-        Your contribution helps cover hosting costs, development time, and future improvements.
-      </p>
+        <section class="post-content">
+          <p>
+            I create and maintain this website to share my learnings, projects,
+            and technical content openly with everyone. If anything here has
+            helped you, whether it is a blog post, project, or idea,
+            your support means a lot.
+          </p>
 
-      <h2>Why Donate?</h2>
-      <ul>
-        <li>Keep the website running ad-free</li>
-        <li>Support future content and updates</li>
-        <li>Encourage open and accessible resources</li>
-      </ul>
+          <p>
+            Donations help cover costs like hosting, domain renewals, and the
+            time spent improving content and building new tools.
+          </p>
 
-      <h2>Choose a Donation Amount</h2>
+          <h2>Why Support?</h2>
+          <ul>
+            <li>Keep the website fast, secure, and ad-free</li>
+            <li>Support long-form technical content and open projects</li>
+            <li>Encourage consistent improvements and new ideas</li>
+          </ul>
 
-      <div class="donate-options">
-        <button>$5</button>
-        <button>$10</button>
-        <button>$25</button>
-        <button>$50</button>
-      </div>
+          <h2>Ways to Donate</h2>
 
-      <p style="margin-top: 2rem; text-align: center;">
-        Prefer a custom amount?  
-        <br />
-        <code>Contact us</code> for other ways to support.
-      </p>
+          <div class="donate-options">
+            <a href="YOUR_PAYPAL_LINK" target="_blank">
+              <button>
+                <i class="fab fa-paypal"></i> Donate via PayPal
+              </button>
+            </a>
 
-      <blockquote>
-        “Every contribution, no matter the size, makes a difference.”
-      </blockquote>
-    </div>
+            <a href="upi://pay?pa=yourupi@bank&pn=Kairav%20Bhatia" target="_blank">
+              <button>
+                <i class="fas fa-mobile-alt"></i> Donate via UPI
+              </button>
+            </a>
+          </div>
 
-    <div class="post-footer">
-      <p style="color:#ccc;">
-        Thank you for being part of our community ❤️
-      </p>
-    </div>
+          <p style="margin-top: 2rem; text-align: center;">
+            Any amount is appreciated. If you cannot donate,
+            sharing the site or sending feedback helps just as much 🙂
+          </p>
+
+          <blockquote>
+            “Support keeps independent creators building useful things for everyone.”
+          </blockquote>
+        </section>
+
+        <footer class="post-footer">
+          <p style="color:#ccc;">
+            Thank you for your support ❤️
+          </p>
+        </footer>
+      </article>
+
+      <footer>
+        <p>&copy; <span id="year"></span> Kairav Bhatia</p>
+      </footer>
+    </main>
   </div>
 
-  <!-- Optional donate-specific styles -->
-  <style>
-    .donate-options {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 2rem 0;
-    }
-
-    .donate-options button {
-      background-color: #333;
-      border: none;
-      margin: 10px;
-      padding: 15px 25px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      border-radius: 8px;
-      color: #fff;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .donate-options button:hover {
-      background-color: #555;
-      transform: translateY(-2px);
-    }
-  </style>
-</main>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-<body>
