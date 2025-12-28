@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linux: Mastering the Open-Source Operating System - Kairav Bhatia</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/blog.css">
+  <link rel="shortcut icon" href="/static/imgs/fav.png" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container scroll-thin">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="highlight" id="highlight"></div>
+      
+      <div class="brand">
+        <a href="/index.html">About <span id="sname">Author</span></a>
+      </div>
+      
+      <div class="right-links">
+        <a href="/">Donate</a>
+      </div>
+
+    </header>
+
+    <!-- Content -->
+    <main class="content-wrapper">
+      <div class="blog-post">
+        <header class="post-header">
+          <h1 class="post-title">Linux: Mastering the Open-Source Operating System</h1>
+          <p class="post-meta">By Kairav Bhatia • December 28, 2025 • 12 min read</p>
+          <img class="post-image" src="https://source.unsplash.com/1200x600/?linux,terminal" alt="Linux Terminal" />
+        </header>
+
+        <section class="post-content">
+          <p>Linux is more than just an operating system—it's a philosophy, a community, and a powerful tool that powers everything from smartphones to supercomputers. Created by Linus Torvalds in 1991, Linux has evolved into the backbone of modern computing. This comprehensive guide will take you through the essentials of Linux, from basic commands to advanced system administration.</p>
+
+          <h2>What is Linux?</h2>
+          <p>Linux is a free, open-source operating system kernel. Unlike proprietary systems like Windows or macOS, Linux is built collaboratively by developers worldwide. The kernel manages hardware resources and provides core services, while distributions (distros) package the kernel with software to create complete operating systems.</p>
+
+          <h3>Popular Linux Distributions</h3>
+          <ul>
+            <li><strong>Ubuntu:</strong> User-friendly, great for beginners and desktops.</li>
+            <li><strong>CentOS/RHEL:</strong> Enterprise-focused, stable for servers.</li>
+            <li><strong>Arch Linux:</strong> Rolling release, for advanced users who want cutting-edge software.</li>
+            <li><strong>Fedora:</strong> Innovative, includes latest features.</li>
+            <li><strong>Debian:</strong> Stable and free, foundation for many distros.</li>
+          </ul>
+
+          <h2>Getting Started with Linux</h2>
+          <p>You can install Linux alongside Windows (dual-boot) or in a virtual machine. Popular tools include VirtualBox or VMware. For beginners, start with Ubuntu Desktop.</p>
+          <p>Once installed, you'll interact with Linux through the terminal (command line). Don't be intimidated— the terminal is powerful and efficient.</p>
+
+          <h2>Essential Linux Commands</h2>
+          <p>Here are some fundamental commands every Linux user should know:</p>
+          <ul>
+            <li><code>ls</code> - List directory contents</li>
+            <li><code>cd</code> - Change directory</li>
+            <li><code>pwd</code> - Print working directory</li>
+            <li><code>mkdir</code> - Create directory</li>
+            <li><code>rm</code> - Remove files/directories</li>
+            <li><code>cp</code> - Copy files</li>
+            <li><code>mv</code> - Move/rename files</li>
+            <li><code>cat</code> - Display file contents</li>
+            <li><code>grep</code> - Search text</li>
+            <li><code>chmod</code> - Change file permissions</li>
+          </ul>
+
+          <h3>File System Navigation</h3>
+          <p>Linux uses a hierarchical file system starting from root (/). Key directories include:</p>
+          <ul>
+            <li><code>/home</code> - User home directories</li>
+            <li><code>/etc</code> - Configuration files</li>
+            <li><code>/var</code> - Variable data (logs, databases)</li>
+            <li><code>/usr</code> - User programs</li>
+            <li><code>/bin</code> - Essential binaries</li>
+          </ul>
+
+          <h2>Package Management</h2>
+          <p>Package managers handle software installation and updates. Different distros use different managers:</p>
+          <ul>
+            <li>Ubuntu/Debian: <code>apt</code> (apt install package-name)</li>
+            <li>CentOS/RHEL: <code>yum</code> or <code>dnf</code></li>
+            <li>Arch: <code>pacman</code></li>
+          </ul>
+          <p>Example: <code>sudo apt update && sudo apt upgrade</code> updates your system.</p>
+
+          <h2>User Management and Permissions</h2>
+          <p>Linux is multi-user. Users have permissions for files and directories. Use <code>chmod</code> to change permissions:</p>
+          <pre><code>chmod 755 script.sh  # Owner: rwx, Group: rx, Others: rx</code></pre>
+          <p>Add users with <code>sudo useradd username</code> and set passwords with <code>sudo passwd username</code>.</p>
+
+          <h2>Process Management</h2>
+          <p>Monitor processes with <code>ps</code> or <code>top</code>. Kill processes with <code>kill PID</code>. Run background jobs with <code>&</code> or <code>nohup</code>.</p>
+          <p>Systemd manages services. Common commands:</p>
+          <ul>
+            <li><code>sudo systemctl start service</code></li>
+            <li><code>sudo systemctl stop service</code></li>
+            <li><code>sudo systemctl status service</code></li>
+          </ul>
+
+          <h2>Shell Scripting</h2>
+          <p>Automate tasks with shell scripts. A simple script:</p>
+          <pre><code>#!/bin/bash
+echo "Hello, Linux!"
+date
+whoami</code></pre>
+          <p>Make executable with <code>chmod +x script.sh</code> and run with <code>./script.sh</code>.</p>
+
+          <h2>Networking in Linux</h2>
+          <p>Configure networks with <code>ifconfig</code> or <code>ip</code>. Check connections with <code>ping</code> and <code>netstat</code>. SSH for remote access: <code>ssh user@hostname</code>.</p>
+          <p>Firewall management with <code>ufw</code> (Ubuntu) or <code>firewalld</code> (CentOS).</p>
+
+          <h2>Linux in Development</h2>
+          <p>Linux is developer-friendly. Install development tools easily:</p>
+          <ul>
+            <li>Git: <code>sudo apt install git</code></li>
+            <li>Node.js: Use NodeSource repository</li>
+            <li>Docker: <code>sudo apt install docker.io</code></li>
+            <li>Python: Usually pre-installed</li>
+          </ul>
+          <p>Many IDEs like VS Code have Linux versions.</p>
+
+          <h2>Security Best Practices</h2>
+          <ul>
+            <li>Keep system updated</li>
+            <li>Use strong passwords and SSH keys</li>
+            <li>Configure firewall</li>
+            <li>Limit sudo access</li>
+            <li>Monitor logs in <code>/var/log</code></li>
+            <li>Use SELinux or AppArmor</li>
+          </ul>
+
+          <h2>Linux in the Cloud</h2>
+          <p>Linux dominates cloud computing. AWS, Google Cloud, and Azure offer Linux instances. Tools like Ansible for configuration management and Terraform for infrastructure as code are Linux-native.</p>
+
+          <blockquote>
+            "Linux is only free if your time has no value." – Jamie Zawinski
+          </blockquote>
+
+          <h2>Learning Resources</h2>
+          <ul>
+            <li>Linux Journey: Interactive learning</li>
+            <li>Linux Command Line Basics</li>
+            <li>Arch Wiki: Comprehensive documentation</li>
+            <li>Reddit's r/linux</li>
+            <li>Books: "The Linux Command Line" by William Shotts</li>
+          </ul>
+
+          <h2>Conclusion</h2>
+          <p>Linux offers unparalleled flexibility, security, and power. Whether you're a developer, system administrator, or hobbyist, mastering Linux opens doors to advanced computing. Start with a user-friendly distro, learn the basics, and gradually explore more complex topics. The Linux community is welcoming and always ready to help.</p>
+          <p>Remember, the best way to learn Linux is by using it. Happy exploring!</p>
+        </section>
+
+        <footer class="post-footer">
+          <div class="share">
+            <p>Share this post:</p>
+            <button>Twitter</button>
+            <button>Facebook</button>
+            <button>LinkedIn</button>
+          </div>
+        </footer>
+      </div>
+
+      <footer>
+        <p>&copy; <span id="year"></span> Kairav Bhatia</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
