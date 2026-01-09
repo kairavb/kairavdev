@@ -489,7 +489,7 @@
             </a>
           </div>
           <p>Have questions or want to work together? Fill out the form below! <br><em style="color: aliceblue; font-family: 'Courier New', Courier, monospace;">It Actually Works!</em></p>
-          <form class="contact-form" action="https://formspree.io/f/xzzbjwez" method="post">
+          <form id="contact-form" class="contact-form" novalidate>
             <div class="form-group">
               <input name="name" type="text" id="name" placeholder="Your Name" required />
             </div>
@@ -499,7 +499,14 @@
             <div class="form-group">
               <textarea name="message" id="message" rows="5" placeholder="Your Message" required minlength="5"></textarea>
             </div>
-            <button type="submit" class="btn">Send Message</button>
+            <!-- Honeypot field (hidden) -->
+            <input type="text" name="company" id="company" tabindex="-1" autocomplete="off" style="display:none;" />
+
+            <div class="form-group">
+              <button type="submit" id="contact-submit" class="btn">Send Message</button>
+            </div>
+
+            <div id="contact-status" aria-live="polite" style="margin-top:12px; font-size:14px; color:inherit"></div>
           </form>
         </div>
       </div>
