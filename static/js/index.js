@@ -101,6 +101,79 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ====================
+  // Contact form submission (fetch + timeout + honeypot + UX)
+  // ====================
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    const submitBtn = document.getElementById('contact-submit');
+    const statusEl = document.getElementById('contact-status');
+    const honeypot = document.getElementById('company');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot check
+      if (honeypot && honeypot.value.trim() !== '') {
+        statusEl.style.color = 'crimson';
+        statusEl.textContent = 'Spam detected.';
+        return;
+      }
+
+      const name = (contactForm.name && contactForm.name.value || '').trim();
+      const email = (contactForm.email && contactForm.email.value || '').trim();
+      const message = (contactForm.message && contactForm.message.value || '').trim();
+
+      if (!name || !email || !message) {
+        statusEl.style.color = 'crimson';
+        statusEl.textContent = 'Please complete all fields.';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      statusEl.textContent = '';
+
+      const controller = new AbortController();
+      const TIMEOUT_MS = 10000;
+      const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+      try {
+        const res = await fetch('https://api.kairav.dev/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ site: 'kairav.dev', name, email, message }),
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+
+        if (res.ok) {
+          statusEl.style.color = 'green';
+          statusEl.textContent = "✅ Message sent — thank you!";
+          contactForm.reset();
+        } else {
+          let errText = res.statusText || 'Server error';
+          try { errText = await res.text(); } catch (err) {}
+          statusEl.style.color = 'crimson';
+          statusEl.textContent = `❌ Error sending message: ${errText}`;
+        }
+      } catch (err) {
+        statusEl.style.color = 'crimson';
+        if (err.name === 'AbortError') {
+          statusEl.textContent = '❌ Request timed out. Please try again.';
+        } else {
+          statusEl.textContent = '❌ Network error. Please try again.';
+        }
+      } finally {
+        clearTimeout(timeoutId);
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    });
+  }
 });
 
 
@@ -131,79 +204,3 @@ function hideToast() {
   const toast = document.getElementById("toast");
   toast.classList.remove("show");
 }
-
-
-// ====================
-// Contact form submission (fetch + timeout + honeypot + UX)
-// ====================
-document.addEventListener('DOMContentLoaded', () => {
-  const contactForm = document.getElementById('contact-form');
-  if (!contactForm) return;
-
-  const submitBtn = document.getElementById('contact-submit');
-  const statusEl = document.getElementById('contact-status');
-  const honeypot = document.getElementById('company');
-
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Honeypot check
-    if (honeypot && honeypot.value.trim() !== '') {
-      statusEl.style.color = 'crimson';
-      statusEl.textContent = 'Spam detected.';
-      return;
-    }
-
-    const name = (contactForm.name && contactForm.name.value || '').trim();
-    const email = (contactForm.email && contactForm.email.value || '').trim();
-    const message = (contactForm.message && contactForm.message.value || '').trim();
-
-    if (!name || !email || !message) {
-      statusEl.style.color = 'crimson';
-      statusEl.textContent = 'Please complete all fields.';
-      return;
-    }
-
-    submitBtn.disabled = true;
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    statusEl.textContent = '';
-
-    const controller = new AbortController();
-    const TIMEOUT_MS = 10000;
-    const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
-
-    try {
-      const res = await fetch('https://api.kairav.dev/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ site: 'kairav.dev', name, email, message }),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      if (res.ok) {
-        statusEl.style.color = 'green';
-        statusEl.textContent = "✅ Message sent — thank you!";
-        contactForm.reset();
-      } else {
-        let errText = res.statusText || 'Server error';
-        try { errText = await res.text(); } catch (err) {}
-        statusEl.style.color = 'crimson';
-        statusEl.textContent = `❌ Error sending message: ${errText}`;
-      }
-    } catch (err) {
-      statusEl.style.color = 'crimson';
-      if (err.name === 'AbortError') {
-        statusEl.textContent = '❌ Request timed out. Please try again.';
-      } else {
-        statusEl.textContent = '❌ Network error. Please try again.';
-      }
-    } finally {
-      clearTimeout(timeoutId);
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-    }
-  });
-});
