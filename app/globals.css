@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Blueprint / construction line tokens — light mode */
+  --line-stroke: rgba(0, 0, 0, 0.10);
+  --line-stroke-light: rgba(0, 0, 0, 0.06);
+  --line-stroke-accent: rgba(0, 0, 0, 0.15);
+  --line-fill: rgba(0, 0, 0, 0.03);
+  --line-fill-accent: rgba(0, 0, 0, 0.05);
+  --line-hatch: rgba(0, 0, 0, 0.07);
+  --nav-link: rgba(0, 0, 0, 0.45);
+  --nav-link-hover: rgba(0, 0, 0, 0.85);
+  --ram-notch: rgba(255, 255, 255, 0.7);
+
+  /* Content column — inner edges of the vertical border bands */
+  --col-left: 550px;
+  /* inner edge of left vertical band  */
+  --col-right: 550px;
+  /* inner edge of right vertical band (from right) */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    /* Blueprint / construction line tokens — dark mode */
+    --line-stroke: rgba(255, 255, 255, 0.08);
+    --line-stroke-light: rgba(255, 255, 255, 0.05);
+    --line-stroke-accent: rgba(255, 255, 255, 0.12);
+    --line-fill: rgba(255, 255, 255, 0.02);
+    --line-fill-accent: rgba(255, 255, 255, 0.04);
+    --line-hatch: rgba(255, 255, 255, 0.06);
+    --nav-link: rgba(255, 255, 255, 0.5);
+    --nav-link-hover: rgba(255, 255, 255, 0.9);
+    --ram-notch: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Explicit Dark Theme Overrides */
+:root[data-theme="dark"],
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  --line-stroke: rgba(255, 255, 255, 0.08);
+  --line-stroke-light: rgba(255, 255, 255, 0.05);
+  --line-stroke-accent: rgba(255, 255, 255, 0.217);
+  --line-stroke-super: rgba(255, 255, 255, 0.59);
+  --line-fill: rgba(255, 255, 255, 0.02);
+  --line-fill-accent: rgba(255, 255, 255, 0.04);
+  --line-hatch: rgba(255, 255, 255, 0.06);
+  --nav-link: rgba(255, 255, 255, 0.5);
+  --nav-link-hover: rgba(255, 255, 255, 0.9);
+  --ram-notch: rgba(0, 0, 0, 0.5);
+}
+
+/* Explicit Light Theme Overrides */
+:root[data-theme="light"],
+html.light {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --line-stroke: rgba(0, 0, 0, 0.10);
+  --line-stroke-light: rgba(0, 0, 0, 0.06);
+  --line-stroke-accent: rgba(0, 0, 0, 0.15);
+  --line-fill: rgba(0, 0, 0, 0.03);
+  --line-fill-accent: rgba(0, 0, 0, 0.05);
+  --line-hatch: rgba(0, 0, 0, 0.07);
+  --nav-link: rgba(0, 0, 0, 0.45);
+  --nav-link-hover: rgba(0, 0, 0, 0.85);
+  --ram-notch: rgba(255, 255, 255, 0.7);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1700px) {
+  :root {
+    --col-left: 450px;
+    --col-right: 450px;
+  }
+}
+
+@media (max-width: 1536px) {
+  :root {
+    --col-left: 350px;
+    --col-right: 350px;
+  }
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --col-left: 200px;
+    --col-right: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --col-left: 80px;
+    --col-right: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --col-left: 0px;
+    --col-right: 0px;
+  }
+}
+
+/* Wave animation for greeting emoji */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Hide scrollbar for elements with .scrollbar-hide */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
