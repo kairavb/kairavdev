@@ -201,59 +201,60 @@ function CadExperience() {
   const experiences = [
     {
       id: "EXP-01",
+      role: "Software Engineer",
+      company: "Secure Elements",
+      period: "Jul 2026 — Aug 2026",
+      location: "Remote",
+      status: "COMPLETED",
+      description: [
+        "Developed MCP backend servers using FastAPI and FastMCP, built PHP backend APIs, and optimized SQL queries.",
+        "Integrated system components and automated API validation workflows using Bruno.",
+        "Contributed to EV charging infrastructure with CitrineOS CSMS and EVerest — city-wide charging simulations, digital twins with Eclipse Ditto, and MQTT communication bridges.",
+        "Developed IDS policies with Suricata and Snort and built Raspberry Pi-based simulators for testing and validation."
+      ],
+      tech: ["FastAPI", "FastMCP", "PHP", "SQL", "Bruno", "MQTT", "Suricata", "Snort", "Raspberry Pi"],
+    },
+    {
+      id: "EXP-02",
+      role: "Software Engineering Intern",
+      company: "Secure Elements",
+      period: "Mar 2026 — Jul 2026",
+      location: "Remote",
+      status: "COMPLETED",
+      description: [
+        "Built Jenkins CI/CD pipelines for Yocto-based embedded systems, internal applications, and AI models.",
+        "Engineered an automotive cybersecurity log simulator with AUTOSAR-style IDS, OTA, and UDS log generation.",
+        "Added syslog conversion and vehicle-theft attack emulation to support MSOC workflows and automotive security analysis."
+      ],
+      tech: ["Jenkins", "CI/CD", "Yocto", "AUTOSAR", "Linux", "Python"],
+    },
+    {
+      id: "EXP-03",
+      role: "Software Engineering Intern",
+      company: "Devnovate",
+      period: "May 2025 — Jan 2026",
+      location: "Remote",
+      status: "COMPLETED",
+      description: [
+        "Deployed and managed a full-stack application on a hardened Debian server with Nginx and PM2 — SSH key authentication, restricted firewall rules, and user permissions.",
+        "Maintained 99.997% uptime (under 1 minute of downtime per month) in July 2025 and automated resource tracking to remove manual monitoring.",
+        "Scaled to 1,000+ users in the first week with sub-300ms response times, growing to 100k+ total users."
+      ],
+      tech: ["Debian", "Nginx", "PM2", "Bash", "UFW"],
+    },
+    {
+      id: "EXP-04",
       role: "Freelance Web & DevOps Developer",
       company: "Freelancing",
       period: "2024 — Present",
       location: "Remote",
       status: "ACTIVE",
       description: [
-        "Building full-stack web applications for clients using React, Node.js, and Go.",
-        "Provisioning and managing Linux servers end to end — Nginx, Docker, hosting, and domains.",
-        "Handling deployments, process management, and security hardening for client projects."
+        "Building full-stack web applications for clients using React, Next.js, Node.js, and Go.",
+        "Delivered 10+ client sites across MERN, Next.js, WordPress, and Wix — including migrations from shared hosting to hardened Linux VPS instances.",
+        "Provisioning and managing Linux servers end to end — Nginx, Docker, control panels, hosting, and domains."
       ],
-      tech: ["React", "Node.js", "Express", "Go", "Linux", "Nginx", "Docker", "Hosting"],
-    },
-    {
-      id: "EXP-02",
-      role: "DevOps Engineer · Internship",
-      company: "Devnovate",
-      period: "May 2025 — Aug 2025",
-      location: "Remote",
-      status: "COMPLETED",
-      description: [
-        "Managed hosting and deployment infrastructure on Linux VPS instances.",
-        "Set up process management with PM2 and reverse proxying with Nginx.",
-        "Hardened servers with UFW firewall rules and automated routine tasks with Bash."
-      ],
-      tech: ["Linux VPS", "PM2", "Bash", "Nginx", "UFW"],
-    },
-    {
-      id: "EXP-03",
-      role: "Server Setup · Freelance",
-      company: "Trid India",
-      period: "Aug 2025",
-      location: "Remote",
-      status: "COMPLETED",
-      description: [
-        "Set up and configured the client's web server on a Linux VPS.",
-        "Deployed and managed the WordPress stack using HestiaCP.",
-        "Configured Nginx and handled DNS, SSL, and ongoing hosting."
-      ],
-      tech: ["Linux VPS", "HestiaCP", "WordPress", "Nginx"],
-    },
-    {
-      id: "EXP-04",
-      role: "Full-Stack Developer · Freelance",
-      company: "Cheap Printouts",
-      period: "Jan 2025",
-      location: "Remote",
-      status: "COMPLETED",
-      description: [
-        "Built the storefront and ordering flow for a printing service.",
-        "Developed the React front-end and a Node/Express back-end.",
-        "Handled the hosting and deployment setup end to end."
-      ],
-      tech: ["React", "Node.js", "Express", "Hosting"],
+      tech: ["React", "Next.js", "Node.js", "Express", "MongoDB", "Linux", "Nginx", "Docker"],
     },
   ];
 

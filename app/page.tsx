@@ -198,7 +198,7 @@ function CadTechStack() {
         { name: "JavaScript", icon: "JS", logo: getTechLogo("JavaScript"), url: "https://developer.mozilla.org/docs/Web/JavaScript" },
         { name: "TypeScript", icon: "TS", logo: getTechLogo("TypeScript"), url: "https://www.typescriptlang.org" },
         { name: "Python", icon: "Py", logo: getTechLogo("Python"), url: "https://www.python.org" },
-        { name: "C", icon: "C", logo: getTechLogo("C"), url: "https://en.cppreference.com/w/c" },
+        { name: "C++", icon: "C++", logo: getTechLogo("C++"), url: "https://en.cppreference.com/w/cpp" },
         { name: "SQL", icon: "SQL", logo: getTechLogo("SQL"), url: "#" },
       ],
     },
@@ -220,9 +220,10 @@ function CadTechStack() {
       skills: [
         { name: "Node.js", icon: "Nd", logo: getTechLogo("Node.js"), url: "https://nodejs.org" },
         { name: "Express", icon: "Ex", logo: getTechLogo("Express"), url: "https://expressjs.com" },
+        { name: "FastAPI", icon: "Fa", logo: getTechLogo("FastAPI"), url: "https://fastapi.tiangolo.com" },
+        { name: "Flask", icon: "Fl", logo: getTechLogo("Flask"), url: "https://flask.palletsprojects.com" },
         { name: "Gin", icon: "Gin", logo: getTechLogo("Gin"), url: "https://gin-gonic.com" },
         { name: "Fiber", icon: "Fb", logo: getTechLogo("Fiber"), url: "https://gofiber.io" },
-        { name: "Flask", icon: "Fl", logo: getTechLogo("Flask"), url: "https://flask.palletsprojects.com" },
         { name: "REST APIs", icon: "API", logo: getTechLogo("REST APIs"), url: "#" },
         { name: "Microservices", icon: "svc", logo: getTechLogo("Microservices"), url: "#" },
       ],
@@ -412,52 +413,43 @@ function CadExperience() {
   const experiences = [
     {
       id: "EXP-01",
-      company: "Freelancing",
-      description: "Building full-stack web apps and setting up & managing Linux servers for clients — from front-end to deployment and hosting.",
-      period: "2024 — PRESENT",
-      role: "Freelance Web & DevOps Developer",
-      status: "ACTIVE",
-      tech: ["React", "Node.js", "Express", "Go", "Linux", "Nginx", "Docker", "Hosting"],
+      company: "Secure Elements",
+      description:
+        "Built MCP backend servers with FastAPI and FastMCP, developed PHP backend APIs, optimized SQL queries, and automated API validation with Bruno. Contributed to EV charging infrastructure using CitrineOS CSMS and EVerest — city-wide charging simulations, digital twins with Eclipse Ditto, MQTT bridges, and IDS policies with Suricata and Snort.",
+      period: "Jul 2026 — Aug 2026",
+      role: "Software Engineer · Remote",
+      status: "COMPLETED",
+      tech: ["FastAPI", "FastMCP", "PHP", "SQL", "MQTT", "Suricata", "Snort", "Raspberry Pi"],
     },
     {
       id: "EXP-02",
-      company: "Devnovate",
+      company: "Secure Elements",
       description:
-        "Managed hosting and deployment infrastructure — provisioned and secured Linux VPS instances, set up process management and reverse proxying.",
-      period: "May 2025 — Aug 2025",
-      role: "DevOps Engineer · Internship",
+        "Built Jenkins CI/CD pipelines for Yocto-based embedded systems, internal applications, and AI models. Engineered an automotive cybersecurity log simulator with AUTOSAR-style IDS, OTA, and UDS log generation, syslog conversion, and vehicle-theft attack emulation to support MSOC workflows and automotive security analysis.",
+      period: "Mar 2026 — Jul 2026",
+      role: "Software Engineering Intern · Remote",
       status: "COMPLETED",
-      tech: ["Linux VPS", "PM2", "Bash", "Nginx", "UFW"],
+      tech: ["Jenkins", "CI/CD", "Yocto", "AUTOSAR", "Linux", "Python"],
     },
     {
       id: "EXP-03",
-      company: "Trid India",
+      company: "Devnovate",
       description:
-        "Set up and configured the client's web server and WordPress stack on a Linux VPS using HestiaCP.",
-      period: "Aug 2025",
-      role: "Server Setup · Freelance",
+        "Deployed and managed a full-stack application on a hardened Debian server with Nginx and PM2 — SSH key auth, restricted firewall rules, and user permissions. Maintained 99.997% uptime and scaled to 100k+ users with sub-300ms response times, automating resource tracking to remove manual monitoring.",
+      period: "May 2025 — Jan 2026",
+      role: "Software Engineering Intern · Remote",
       status: "COMPLETED",
-      tech: ["Linux VPS", "HestiaCP", "WordPress", "Nginx"],
+      tech: ["Debian", "Nginx", "PM2", "Bash", "UFW"],
     },
     {
       id: "EXP-04",
-      company: "Cheap Printouts",
+      company: "Freelancing",
       description:
-        "Built the storefront and ordering flow for a printing service and handled the hosting setup end to end.",
-      period: "Jan 2025",
-      role: "Full-Stack Developer · Freelance",
-      status: "COMPLETED",
-      tech: ["React", "Node.js", "Express", "Hosting"],
-    },
-    {
-      id: "EXP-05",
-      company: "BH Reels",
-      description:
-        "Developed a full-stack media app with a React front-end and a Node/Express back-end.",
-      period: "Jun 2024",
-      role: "Full-Stack Developer · Freelance",
-      status: "COMPLETED",
-      tech: ["React", "Node.js", "Express"],
+        "Building full-stack web apps and managing Linux servers for clients — from front-end to deployment, hosting, and domains. Delivered 10+ sites across MERN, Next.js, WordPress, and Wix, including migrations to hardened Linux VPS instances.",
+      period: "2024 — Present",
+      role: "Freelance Web & DevOps Developer",
+      status: "ACTIVE",
+      tech: ["React", "Next.js", "Node.js", "Express", "MongoDB", "Linux", "Nginx", "Docker"],
     },
   ];
 
@@ -694,24 +686,26 @@ function CadEducation() {
     {
       id: "EDU-01",
       degree: "B.Tech",
-      field: "Computer Science & AI",
+      field: "Computer Science & Artificial Intelligence",
       highlights: [
+        "CGPA 7.85 / 10",
         "Data Structures & Algorithms",
         "Machine Learning",
         "Database Management",
         "Operating Systems",
-        "AI & Data Science",
+        "Computer Networks",
+        "System Design",
       ],
       institution: "Vivekananda Institute of Professional Studies (GGSIPU), New Delhi",
-      period: "2022 — 2026",
+      period: "July 2022 — July 2026",
       status: "COMPLETED",
     },
     {
       id: "EDU-02",
       degree: "Secondary & Senior Secondary (X–XII)",
-      field: "Science — PCM with Computer Science",
-      highlights: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
-      institution: "DAV Public School, New Delhi",
+      field: "Science — PCM with Computer Science (CBSE)",
+      highlights: ["Class XII — 83% (2022)", "Class X — 81% (2020)", "Physics", "Chemistry", "Mathematics", "Computer Science"],
+      institution: "DAV Public School, New Delhi (CBSE)",
       period: "2020 — 2022",
       status: "COMPLETED",
     },
@@ -909,29 +903,29 @@ function CadEducation() {
 }
 
 const projectCardMeta: Record<string, { brandColor: string; bgGradient: string; stars: string }> = {
-  "Payment System": {
-    brandColor: "#2563eb",
-    bgGradient: "linear-gradient(135deg, rgba(37, 99, 235, 0.16) 0%, rgba(30, 58, 138, 0.22) 100%)",
-    stars: "",
-  },
-  "LinkedIn for Chefs": {
+  "Cloud-Native AI Deployment Platform": {
     brandColor: "#059669",
     bgGradient: "linear-gradient(135deg, rgba(5, 150, 105, 0.16) 0%, rgba(6, 78, 59, 0.22) 100%)",
     stars: "",
   },
-  "GO Linux CLI": {
+  "Scalable URL Shortening Service": {
+    brandColor: "#0284c7",
+    bgGradient: "linear-gradient(135deg, rgba(2, 132, 199, 0.16) 0%, rgba(12, 74, 110, 0.22) 100%)",
+    stars: "",
+  },
+  "Linux Command-Line Assistant": {
     brandColor: "#06b6d4",
     bgGradient: "linear-gradient(135deg, rgba(6, 182, 212, 0.16) 0%, rgba(14, 116, 144, 0.22) 100%)",
     stars: "",
   },
-  "Minimalist Snake": {
-    brandColor: "#7c3aed",
-    bgGradient: "linear-gradient(135deg, rgba(124, 58, 237, 0.16) 0%, rgba(76, 29, 149, 0.22) 100%)",
+  "Virtual Banking System": {
+    brandColor: "#2563eb",
+    bgGradient: "linear-gradient(135deg, rgba(37, 99, 235, 0.16) 0%, rgba(30, 58, 138, 0.22) 100%)",
     stars: "",
   },
-  "GO URL Shortener": {
-    brandColor: "#0284c7",
-    bgGradient: "linear-gradient(135deg, rgba(2, 132, 199, 0.16) 0%, rgba(12, 74, 110, 0.22) 100%)",
+  "Chef Hiring Portal": {
+    brandColor: "#f59e0b",
+    bgGradient: "linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(146, 64, 14, 0.22) 100%)",
     stars: "",
   },
 };
@@ -1172,43 +1166,43 @@ function CadProjects() {
   const projects = [
     {
       id: "PRJ-01",
-      description: "A mock banking and payments platform built from scratch — accounts, balance transfers, and full transaction history with a clean, responsive UI.",
-      link: "https://mock-bank.pages.dev/",
-      name: "Payment System",
+      description: "A cloud-native platform that deploys ML models as scalable inference APIs — automated containerization, model versioning, deployment orchestration, health monitoring, and interactive inference testing.",
+      link: "#",
+      name: "Cloud-Native AI Deployment Platform",
       status: "PRODUCTION",
-      tech: ["React", "Node.js", "Express", "PostgreSQL", "Cloudflare"],
+      tech: ["FastAPI", "React", "PostgreSQL", "Docker", "Prometheus"],
     },
     {
       id: "PRJ-02",
-      description: "A social network for chefs — profiles, posts, and a recipe-driven feed connecting culinary professionals.",
-      link: "https://kairavb.pythonanywhere.com/",
-      name: "LinkedIn for Chefs",
-      status: "PRODUCTION",
-      tech: ["Flask", "Python", "SQLite", "HTML", "CSS"],
+      description: "A backend URL shortening service in Go with clean REST APIs, collision-safe short codes, token-bucket rate limiting, in-memory caching, and load-tested throughput and latency.",
+      link: "https://github.com/kairavb/URL-Shortner",
+      name: "Scalable URL Shortening Service",
+      status: "OPEN_SOURCE",
+      tech: ["Go", "REST APIs", "Caching", "Rate Limiting"],
     },
     {
       id: "PRJ-03",
-      description: "A command-line toolkit for Linux written in Go — fast, single static binary, zero dependencies.",
+      description: "A Go CLI that turns natural-language queries into shell commands with clear explanations, a monitoring mode, history logging, and safety-first execution (dry-run, confirmation, and destructive-command warnings).",
       link: "https://github.com/kairavb/go-linux",
-      name: "GO Linux CLI",
+      name: "Linux Command-Line Assistant",
       status: "OPEN_SOURCE",
-      tech: ["Go", "CLI", "Linux"],
+      tech: ["Go", "Bash", "Linux", "CLI"],
     },
     {
       id: "PRJ-04",
-      description: "A clean, minimal take on the classic snake game — pure JavaScript on the canvas, no frameworks.",
-      link: "https://saap.pages.dev",
-      name: "Minimalist Snake",
+      description: "A banking backend with account creation, transaction history, fund transfers, and role-based dashboards for users and admins — built on RESTful APIs and structured data models.",
+      link: "https://mock-bank.pages.dev/",
+      name: "Virtual Banking System",
       status: "PRODUCTION",
-      tech: ["JavaScript", "Canvas", "HTML", "CSS"],
+      tech: ["MongoDB", "Node.js", "Express", "JavaScript"],
     },
     {
       id: "PRJ-05",
-      description: "A lightweight URL shortener written in Go with fast redirects and basic click analytics.",
-      link: "https://github.com/kairavb/URL-Shortner",
-      name: "GO URL Shortener",
-      status: "OPEN_SOURCE",
-      tech: ["Go", "Redis"],
+      description: "A high-performance backend for a chef-hiring platform — communication, profile management, view tracking, and global browsing of 12+ chefs with sub-200ms name search.",
+      link: "https://kairavb.pythonanywhere.com/",
+      name: "Chef Hiring Portal",
+      status: "PRODUCTION",
+      tech: ["Flask", "Python", "MySQL", "JavaScript"],
     },
   ];
 
@@ -1992,6 +1986,170 @@ function CadAboutMe() {
   );
 }
 
+/* ── CAD STARTUPS & COMMUNITY ── */
+function CadCommunity() {
+  const items = [
+    { id: "ORG-01", role: "Founder", org: "Pipebit.dev", tag: "STARTUP", note: "Delivering custom software and workflow solutions for startups and growing businesses." },
+    { id: "ORG-02", role: "Co-Founder", org: "Devnovate.co", tag: "STARTUP", note: "A developer platform for hackathons, projects, networking, and career opportunities." },
+    { id: "ORG-03", role: "Co-Founder", org: "Snyco.ai", tag: "STARTUP", note: "Building AI-powered workflow automation and productivity solutions for the public." },
+    { id: "ORG-04", role: "Community Partner", org: "HackWithIndia", tag: "COMMUNITY", note: "Supporting hackathon operations and community engagement." },
+    { id: "ORG-05", role: "Mentor", org: "National & International Hackathons", tag: "MENTORSHIP", note: "Mentored 100+ teams on software development and technical problem-solving." },
+  ];
+
+  return (
+    <div
+      id="community"
+      style={{
+        backgroundColor: "var(--line-fill)",
+        border: "1px solid var(--line-stroke-accent)",
+        fontFamily: "var(--font-geist-mono)",
+        fontSize: "12px",
+        marginTop: "24px",
+        position: "relative",
+      }}
+    >
+      {/* Header Bar */}
+      <div
+        style={{
+          alignItems: "center",
+          backgroundColor: "var(--line-fill-accent)",
+          borderBottom: "1px solid var(--line-stroke-accent)",
+          color: "var(--nav-link-hover)",
+          display: "flex",
+          fontSize: "11px",
+          justifyContent: "space-between",
+          letterSpacing: "0.1em",
+          padding: "10px 14px",
+        }}
+      >
+        <div style={{ alignItems: "center", display: "flex", gap: "8px" }}>
+          <span style={{ backgroundColor: "#ec4899", borderRadius: "50%", display: "inline-block", height: "6px", width: "6px" }} />
+          <span>Startups &amp; Community</span>
+        </div>
+        <span>TOTAL: 0{items.length}_VENTURES</span>
+      </div>
+
+      {/* Entries */}
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {items.map((it, index) => (
+          <div
+            key={it.id}
+            style={{
+              backgroundColor: "var(--background)",
+              borderBottom: index === items.length - 1 ? "none" : "1px solid var(--line-stroke)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px",
+              padding: "14px 16px",
+            }}
+          >
+            <div style={{ alignItems: "center", display: "flex", flexWrap: "wrap", gap: "10px" }}>
+              <span style={{ color: "var(--foreground)", fontSize: "14px", fontWeight: 600 }}>{it.org}</span>
+              <span
+                style={{
+                  border: "1px solid var(--line-stroke-accent)",
+                  borderRadius: "2px",
+                  color: "var(--nav-link)",
+                  fontSize: "8px",
+                  letterSpacing: "0.08em",
+                  padding: "2px 6px",
+                }}
+              >
+                {it.tag}
+              </span>
+            </div>
+            <span style={{ color: "var(--nav-link-hover)", fontSize: "11px", fontWeight: 500 }}>{it.role}</span>
+            <span style={{ color: "var(--nav-link-hover)", fontSize: "12px", lineHeight: "1.6" }}>{it.note}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ── CAD ACHIEVEMENTS & CERTIFICATIONS ── */
+function CadAchievements() {
+  const achievements = [
+    "Published research paper — “Temporal Image-Based Pseudo-Random Bit Generator: Harnessing Time Seeds and Input Images”, a nature-dependent random number generating algorithm.",
+    "Ranked 3,228th in the ICPC 2026 Online Challenge 1, powered by Huawei.",
+    "Solved 800+ algorithmic problems across LeetCode, Codeforces, and TakeUForward over 50+ contests.",
+    "1st place — Web Technologies quiz competition at VIPS-TC, Pitampura.",
+    "1st place — Debugging competition at Amity University, Noida.",
+    "Reached the highest competitive league on Chess.com.",
+  ];
+  const certs = [
+    "Harvard CS50x — Introduction to Computer Science (10 problem sets + final project)",
+    "TakeUForward DSA Course & A2Z Sheet",
+  ];
+
+  return (
+    <div
+      id="achievements"
+      style={{
+        backgroundColor: "var(--line-fill)",
+        border: "1px solid var(--line-stroke-accent)",
+        fontFamily: "var(--font-geist-mono)",
+        fontSize: "12px",
+        marginTop: "24px",
+        position: "relative",
+      }}
+    >
+      {/* Header Bar */}
+      <div
+        style={{
+          alignItems: "center",
+          backgroundColor: "var(--line-fill-accent)",
+          borderBottom: "1px solid var(--line-stroke-accent)",
+          color: "var(--nav-link-hover)",
+          display: "flex",
+          fontSize: "11px",
+          justifyContent: "space-between",
+          letterSpacing: "0.1em",
+          padding: "10px 14px",
+        }}
+      >
+        <div style={{ alignItems: "center", display: "flex", gap: "8px" }}>
+          <span style={{ backgroundColor: "#eab308", borderRadius: "50%", display: "inline-block", height: "6px", width: "6px" }} />
+          <span>Achievements &amp; Certifications</span>
+        </div>
+        <span>TOTAL: 0{achievements.length}_RECORDS</span>
+      </div>
+
+      {/* Achievements list */}
+      <ul style={{ backgroundColor: "var(--background)", display: "flex", flexDirection: "column", gap: "12px", listStyle: "none", margin: 0, padding: "16px" }}>
+        {achievements.map((a, i) => (
+          <li key={i} style={{ color: "var(--nav-link-hover)", display: "flex", fontSize: "12px", gap: "12px", lineHeight: "1.6" }}>
+            <span style={{ color: "var(--line-stroke-accent)", fontSize: "10px", marginTop: "1px" }}>▪</span>
+            <span>{a}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* Certifications */}
+      <div style={{ backgroundColor: "var(--background)", borderTop: "1px dashed var(--line-stroke)", display: "flex", flexDirection: "column", gap: "10px", padding: "16px" }}>
+        <div style={{ color: "var(--nav-link)", fontSize: "9px", letterSpacing: "0.1em" }}>CERTIFICATIONS //</div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+          {certs.map((c) => (
+            <span
+              key={c}
+              style={{
+                backgroundColor: "var(--line-fill)",
+                border: "1px solid var(--line-stroke-accent)",
+                borderRadius: "4px",
+                color: "var(--foreground)",
+                fontSize: "11px",
+                padding: "6px 11px",
+              }}
+            >
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Page() {
   return (
     <main style={{ display: "contents" }}>
@@ -2001,13 +2159,12 @@ export default function Page() {
           Padding top is 60px to clear the fixed navbar.
       */}
       <section
-        className={clsx("relative", "flex", "flex-col")}
+        className={clsx("relative", "flex", "flex-col", "pt-0", "md:pt-[60px]")}
         style={{
           borderBottom: "1px solid var(--line-stroke)",
           gridColumn: "2",
           gridRow: "1",
           minWidth: 0,
-          paddingTop: "60px",
         }}
       >
         {/* Hero image — flush to left and right edges of the content column */}
@@ -2717,6 +2874,12 @@ export default function Page() {
 
           {/* CAD PROJECTS SCHEMA */}
           <CadProjects />
+
+          {/* CAD STARTUPS & COMMUNITY */}
+          <CadCommunity />
+
+          {/* CAD ACHIEVEMENTS & CERTIFICATIONS */}
+          <CadAchievements />
 
           {/* INSPIRED BY — single line credit */}
           <div

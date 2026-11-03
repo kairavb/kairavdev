@@ -105,29 +105,54 @@ export default function ProjectsPage() {
 }
 
 const projectCardMeta: Record<string, { brandColor: string; bgGradient: string; stars: string }> = {
-  "Payment System": {
-    brandColor: "#2563eb",
-    bgGradient: "linear-gradient(135deg, rgba(37, 99, 235, 0.16) 0%, rgba(30, 58, 138, 0.22) 100%)",
-    stars: "",
-  },
-  "LinkedIn for Chefs": {
+  "Cloud-Native AI Deployment Platform": {
     brandColor: "#059669",
     bgGradient: "linear-gradient(135deg, rgba(5, 150, 105, 0.16) 0%, rgba(6, 78, 59, 0.22) 100%)",
     stars: "",
   },
-  "GO Linux CLI": {
+  "Scalable URL Shortening Service": {
+    brandColor: "#0284c7",
+    bgGradient: "linear-gradient(135deg, rgba(2, 132, 199, 0.16) 0%, rgba(12, 74, 110, 0.22) 100%)",
+    stars: "",
+  },
+  "Linux Command-Line Assistant": {
     brandColor: "#06b6d4",
     bgGradient: "linear-gradient(135deg, rgba(6, 182, 212, 0.16) 0%, rgba(14, 116, 144, 0.22) 100%)",
     stars: "",
   },
-  "Minimalist Snake": {
+  "Virtual Banking System": {
+    brandColor: "#2563eb",
+    bgGradient: "linear-gradient(135deg, rgba(37, 99, 235, 0.16) 0%, rgba(30, 58, 138, 0.22) 100%)",
+    stars: "",
+  },
+  "Chef Hiring Portal": {
+    brandColor: "#f59e0b",
+    bgGradient: "linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(146, 64, 14, 0.22) 100%)",
+    stars: "",
+  },
+  "NFT Ticket Marketplace": {
     brandColor: "#7c3aed",
     bgGradient: "linear-gradient(135deg, rgba(124, 58, 237, 0.16) 0%, rgba(76, 29, 149, 0.22) 100%)",
     stars: "",
   },
-  "GO URL Shortener": {
-    brandColor: "#0284c7",
-    bgGradient: "linear-gradient(135deg, rgba(2, 132, 199, 0.16) 0%, rgba(12, 74, 110, 0.22) 100%)",
+  "Live Snake Game": {
+    brandColor: "#16a34a",
+    bgGradient: "linear-gradient(135deg, rgba(22, 163, 74, 0.16) 0%, rgba(20, 83, 45, 0.22) 100%)",
+    stars: "",
+  },
+  "Single Layer Perceptron": {
+    brandColor: "#db2777",
+    bgGradient: "linear-gradient(135deg, rgba(219, 39, 119, 0.16) 0%, rgba(131, 24, 67, 0.22) 100%)",
+    stars: "",
+  },
+  "Duplicate File Remover": {
+    brandColor: "#ea580c",
+    bgGradient: "linear-gradient(135deg, rgba(234, 88, 12, 0.16) 0%, rgba(124, 45, 18, 0.22) 100%)",
+    stars: "",
+  },
+  "CP Practice Game": {
+    brandColor: "#0891b2",
+    bgGradient: "linear-gradient(135deg, rgba(8, 145, 178, 0.16) 0%, rgba(14, 116, 144, 0.22) 100%)",
     stars: "",
   },
 };
@@ -368,75 +393,123 @@ function CadProjects() {
   const projects = [
     {
       id: "PRJ-01",
-      name: "Payment System",
+      name: "Cloud-Native AI Deployment Platform",
       status: "PRODUCTION",
       description: [
-        "Built a mock banking and payments platform from scratch with account management and secure balance transfers.",
-        "Implemented a complete transaction history with a clean, responsive front-end.",
-        "Deployed on Cloudflare Pages with a Node/Express back-end and a PostgreSQL database."
+        "Built a cloud-native platform that deploys machine learning models as scalable inference APIs through automated containerization, model versioning, and deployment orchestration.",
+        "Designed a complete model lifecycle management system with deployment monitoring, health validation, and centralized logging.",
+        "Added interactive inference testing for reliable, production-ready model serving."
       ],
-      tech: ["React", "Node.js", "Express", "PostgreSQL", "Cloudflare"],
-      link: "https://mock-bank.pages.dev/",
+      tech: ["FastAPI", "React", "PostgreSQL", "Docker", "Prometheus"],
+      link: "#",
     },
     {
       id: "PRJ-02",
-      name: "LinkedIn for Chefs",
-      status: "PRODUCTION",
+      name: "Scalable URL Shortening Service",
+      status: "OPEN_SOURCE",
       description: [
-        "Built a social network for chefs with profiles, posts, and a recipe-driven feed.",
-        "Developed the back-end with Flask and a SQLite database.",
-        "Shipped a responsive, server-rendered interface for culinary professionals to connect."
+        "Built a backend URL shortening service in Go with clean REST APIs and collision-safe short-code generation.",
+        "Implemented concurrency-safe request handling with token-bucket rate limiting, in-memory caching for hot URLs, persistent storage, and health/readiness endpoints.",
+        "Stress-tested under concurrent load to measure throughput and latency, identify bottlenecks, and optimize request handling."
       ],
-      tech: ["Flask", "Python", "SQLite", "HTML", "CSS"],
-      link: "https://kairavb.pythonanywhere.com/",
+      tech: ["Go", "REST APIs", "Caching", "Rate Limiting", "Load Testing"],
+      link: "https://github.com/kairavb/URL-Shortner",
     },
     {
       id: "PRJ-03",
-      name: "GO Linux CLI",
+      name: "Linux Command-Line Assistant",
       status: "OPEN_SOURCE",
       description: [
-        "Built a command-line toolkit for Linux written in Go.",
-        "Ships as a single static binary with zero runtime dependencies.",
-        "Designed for speed and a clean, scriptable interface."
+        "Built a Go-based Linux CLI that converts natural-language queries into shell commands with clear explanations.",
+        "Added flag-based controls, a monitoring mode, and command-history logging.",
+        "Implemented safety-first execution — dry-run mode, explicit confirmation, command validation, and warnings for destructive commands."
       ],
-      tech: ["Go", "CLI", "Linux"],
+      tech: ["Go", "Bash", "Linux", "CLI"],
       link: "https://github.com/kairavb/go-linux",
     },
     {
       id: "PRJ-04",
-      name: "Minimalist Snake",
+      name: "Virtual Banking System",
       status: "PRODUCTION",
       description: [
-        "A clean, minimal take on the classic snake game.",
-        "Built in pure JavaScript on the HTML canvas with no frameworks.",
-        "Responsive controls and a distraction-free interface."
+        "Built a banking backend with user account creation, transaction history, and fund transfers.",
+        "Added role-based dashboards for both users and administrators.",
+        "Exposed functionality via RESTful APIs backed by structured data models."
       ],
-      tech: ["JavaScript", "Canvas", "HTML", "CSS"],
-      link: "https://saap.pages.dev",
+      tech: ["MongoDB", "Node.js", "Express", "JavaScript"],
+      link: "https://mock-bank.pages.dev/",
     },
     {
       id: "PRJ-05",
-      name: "GO URL Shortener",
-      status: "OPEN_SOURCE",
+      name: "Chef Hiring Portal",
+      status: "PRODUCTION",
       description: [
-        "A lightweight URL shortener written in Go with fast redirects.",
-        "Generates short codes and tracks basic click analytics.",
-        "Backed by Redis for low-latency lookups."
+        "Engineered and deployed a high-performance backend for a chef-hiring platform.",
+        "Enabled communication, profile management, view tracking, and global browsing of 12+ chefs.",
+        "Implemented name-based search with response times under 200ms."
       ],
-      tech: ["Go", "Redis"],
-      link: "https://github.com/kairavb/URL-Shortner",
+      tech: ["Flask", "Python", "MySQL", "JavaScript"],
+      link: "https://kairavb.pythonanywhere.com/",
     },
     {
       id: "PRJ-06",
-      name: "See-Through Neural Net",
+      name: "NFT Ticket Marketplace",
       status: "OPEN_SOURCE",
       description: [
-        "A visual single-layer perceptron that shows the network learning in real time.",
-        "Renders weights and decision boundaries as they update.",
-        "Built to make the basics of neural networks intuitive."
+        "Built a blockchain-based ticketing platform that issues tickets as NFTs to prevent fraud and black-marketing.",
+        "Implemented minting and ownership flows on the Aptos blockchain.",
+        "Shipped a React front-end for browsing and purchasing tickets."
       ],
-      tech: ["Python", "ML"],
+      tech: ["Aptos", "TypeScript", "React", "JavaScript"],
+      link: "#",
+    },
+    {
+      id: "PRJ-07",
+      name: "Live Snake Game",
+      status: "PRODUCTION",
+      description: [
+        "A clean, minimal take on the classic snake game in pure JavaScript on the HTML canvas.",
+        "Optimized and deployed static assets via the Cloudflare CDN for fast, low-latency global delivery.",
+        "Responsive, multi-device controls with a distraction-free interface."
+      ],
+      tech: ["JavaScript", "Canvas", "Cloudflare"],
+      link: "https://saap.pages.dev",
+    },
+    {
+      id: "PRJ-08",
+      name: "Single Layer Perceptron",
+      status: "OPEN_SOURCE",
+      description: [
+        "Built a single-layer perceptron from scratch with NumPy to classify image inputs.",
+        "Used OpenCV for image preprocessing and feature extraction.",
+        "A hands-on exercise in the fundamentals of neural networks."
+      ],
+      tech: ["Python", "NumPy", "OpenCV"],
       link: "https://github.com/kairavb/single_layer_perceptron",
+    },
+    {
+      id: "PRJ-09",
+      name: "Duplicate File Remover",
+      status: "OPEN_SOURCE",
+      description: [
+        "Built a Windows desktop app to detect and remove duplicate files automatically.",
+        "Optimized the scan algorithm to process thousands of files in seconds.",
+        "Reduced storage clutter with a simple Tkinter GUI."
+      ],
+      tech: ["Python", "Tkinter"],
+      link: "#",
+    },
+    {
+      id: "PRJ-10",
+      name: "CP Practice Game",
+      status: "PRODUCTION",
+      description: [
+        "Created a timer-based environment for revising algorithms with a points-based progress system.",
+        "Added 4 practice modes to suit different user needs.",
+        "Built to make competitive-programming practice more engaging."
+      ],
+      tech: ["Python", "Web"],
+      link: "#",
     },
   ];
 
