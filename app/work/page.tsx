@@ -161,6 +161,7 @@ export default function WorkPage() {
 
       <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
         <CadExperience />
+        <CadFreelanceClients />
       </div>
 
       {/* Back to Home Link */}
@@ -193,6 +194,115 @@ export default function WorkPage() {
         </Link>
       </div>
     </main>
+  );
+}
+
+function CadFreelanceClients() {
+  const clients = [
+    { host: "tridindia.com", url: "https://tridindia.com", note: "Migrated and deployed 10+ websites from shared hosting to a hardened Linux VPS with a control panel.", stack: ["Linux VPS", "HestiaCP", "Migration"] },
+    { host: "madsha.com", url: "https://madsha.com", note: "Built and deployed a MERN web application for a business.", stack: ["MongoDB", "Express", "React", "Node.js"] },
+    { host: "superworldapp.com", url: "https://superworldapp.com", note: "Built and deployed a MERN web application for a business.", stack: ["MongoDB", "Express", "React", "Node.js"] },
+    { host: "toabh.com", url: "https://toabh.com", note: "Built and deployed a MERN web application for a business.", stack: ["MongoDB", "Express", "React", "Node.js"] },
+    { host: "urbanmodish.vercel.app", url: "https://urbanmodish.vercel.app", note: "Built and deployed a Next.js web application for a business.", stack: ["Next.js", "React"] },
+    { host: "bh-reels.vercel.app", url: "https://bh-reels.vercel.app", note: "A marketing website with reels for a startup, built in vanilla JavaScript.", stack: ["JavaScript", "HTML", "CSS"] },
+    { host: "cheapprintouts.com", url: "https://cheapprintouts.com", note: "Built a WordPress site handling printing requests from clients across India.", stack: ["WordPress", "Hosting"] },
+    { host: "contourinteriors.in", url: "https://contourinteriors.in", note: "Built a public Wix website for the client's business.", stack: ["Wix"] },
+  ];
+
+  return (
+    <div
+      id="freelance-clients"
+      style={{
+        marginTop: "24px",
+        border: "1px solid var(--line-stroke-accent)",
+        backgroundColor: "var(--line-fill)",
+        position: "relative",
+        fontSize: "12px",
+        fontFamily: "var(--font-geist-mono)",
+      }}
+    >
+      {/* Header Bar */}
+      <div
+        style={{
+          borderBottom: "1px solid var(--line-stroke-accent)",
+          padding: "10px 14px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          backgroundColor: "var(--line-fill-accent)",
+          fontSize: "11px",
+          letterSpacing: "0.1em",
+          color: "var(--nav-link-hover)",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <span style={{ width: "6px", height: "6px", backgroundColor: "#22c55e", borderRadius: "50%", display: "inline-block" }} />
+          <span>Freelance Clients</span>
+        </div>
+        <span>TOTAL: 0{clients.length}_SITES</span>
+      </div>
+
+      {/* Client Rows */}
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {clients.map((c, index) => (
+          <div
+            key={c.host}
+            style={{
+              backgroundColor: "var(--background)",
+              borderBottom: index === clients.length - 1 ? "none" : "1px solid var(--line-stroke)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "8px",
+              padding: "16px 20px",
+            }}
+          >
+            <a
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                color: "var(--foreground)",
+                fontSize: "15px",
+                fontWeight: 700,
+                textDecoration: "none",
+                width: "fit-content",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--nav-link-hover)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground)")}
+            >
+              <span>{c.host}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+            <span style={{ color: "var(--nav-link-hover)", fontSize: "13px", lineHeight: "1.6" }}>{c.note}</span>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+              {c.stack.map((t) => (
+                <span
+                  key={t}
+                  style={{
+                    backgroundColor: "var(--line-fill)",
+                    border: "1px solid var(--line-stroke)",
+                    color: "var(--foreground)",
+                    fontSize: "10px",
+                    letterSpacing: "0.05em",
+                    padding: "3px 8px",
+                    borderRadius: "3px",
+                  }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

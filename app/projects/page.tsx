@@ -394,31 +394,31 @@ function CadProjects() {
     {
       id: "PRJ-01",
       name: "Cloud-Native AI Deployment Platform",
-      status: "PRODUCTION",
+      status: "PROD",
       description: [
         "Built a cloud-native platform that deploys machine learning models as scalable inference APIs through automated containerization, model versioning, and deployment orchestration.",
         "Designed a complete model lifecycle management system with deployment monitoring, health validation, and centralized logging.",
         "Added interactive inference testing for reliable, production-ready model serving."
       ],
       tech: ["FastAPI", "React", "PostgreSQL", "Docker", "Prometheus"],
-      link: "#",
+      link: "https://github.com/kairavb/model-deployment-platform",
     },
     {
       id: "PRJ-02",
       name: "Scalable URL Shortening Service",
-      status: "OPEN_SOURCE",
+      status: "OSS",
       description: [
         "Built a backend URL shortening service in Go with clean REST APIs and collision-safe short-code generation.",
         "Implemented concurrency-safe request handling with token-bucket rate limiting, in-memory caching for hot URLs, persistent storage, and health/readiness endpoints.",
         "Stress-tested under concurrent load to measure throughput and latency, identify bottlenecks, and optimize request handling."
       ],
       tech: ["Go", "REST APIs", "Caching", "Rate Limiting", "Load Testing"],
-      link: "https://github.com/kairavb/URL-Shortner",
+      link: "https://github.com/kairavb/URL-Shortener",
     },
     {
       id: "PRJ-03",
       name: "Linux Command-Line Assistant",
-      status: "OPEN_SOURCE",
+      status: "OSS",
       description: [
         "Built a Go-based Linux CLI that converts natural-language queries into shell commands with clear explanations.",
         "Added flag-based controls, a monitoring mode, and command-history logging.",
@@ -430,7 +430,7 @@ function CadProjects() {
     {
       id: "PRJ-04",
       name: "Virtual Banking System",
-      status: "PRODUCTION",
+      status: "PROD",
       description: [
         "Built a banking backend with user account creation, transaction history, and fund transfers.",
         "Added role-based dashboards for both users and administrators.",
@@ -442,7 +442,7 @@ function CadProjects() {
     {
       id: "PRJ-05",
       name: "Chef Hiring Portal",
-      status: "PRODUCTION",
+      status: "PROD",
       description: [
         "Engineered and deployed a high-performance backend for a chef-hiring platform.",
         "Enabled communication, profile management, view tracking, and global browsing of 12+ chefs.",
@@ -454,19 +454,19 @@ function CadProjects() {
     {
       id: "PRJ-06",
       name: "NFT Ticket Marketplace",
-      status: "OPEN_SOURCE",
+      status: "OSS",
       description: [
         "Built a blockchain-based ticketing platform that issues tickets as NFTs to prevent fraud and black-marketing.",
         "Implemented minting and ownership flows on the Aptos blockchain.",
         "Shipped a React front-end for browsing and purchasing tickets."
       ],
       tech: ["Aptos", "TypeScript", "React", "JavaScript"],
-      link: "#",
+      link: "https://github.com/AryanGupta0007/NFTmarketPlace",
     },
     {
       id: "PRJ-07",
       name: "Live Snake Game",
-      status: "PRODUCTION",
+      status: "PROD",
       description: [
         "A clean, minimal take on the classic snake game in pure JavaScript on the HTML canvas.",
         "Optimized and deployed static assets via the Cloudflare CDN for fast, low-latency global delivery.",
@@ -478,7 +478,7 @@ function CadProjects() {
     {
       id: "PRJ-08",
       name: "Single Layer Perceptron",
-      status: "OPEN_SOURCE",
+      status: "OSS",
       description: [
         "Built a single-layer perceptron from scratch with NumPy to classify image inputs.",
         "Used OpenCV for image preprocessing and feature extraction.",
@@ -490,26 +490,26 @@ function CadProjects() {
     {
       id: "PRJ-09",
       name: "Duplicate File Remover",
-      status: "OPEN_SOURCE",
+      status: "OSS",
       description: [
         "Built a Windows desktop app to detect and remove duplicate files automatically.",
         "Optimized the scan algorithm to process thousands of files in seconds.",
         "Reduced storage clutter with a simple Tkinter GUI."
       ],
       tech: ["Python", "Tkinter"],
-      link: "#",
+      link: "https://github.com/kairavb/duplicate_file_finder",
     },
     {
       id: "PRJ-10",
       name: "CP Practice Game",
-      status: "PRODUCTION",
+      status: "PROD",
       description: [
         "Created a timer-based environment for revising algorithms with a points-based progress system.",
         "Added 4 practice modes to suit different user needs.",
         "Built to make competitive-programming practice more engaging."
       ],
       tech: ["Python", "Web"],
-      link: "#",
+      link: "https://github.com/kairavb/dsaplatform",
     },
   ];
 
@@ -615,11 +615,11 @@ function CadProjects() {
                             style={{
                               fontSize: "9px",
                               padding: "2px 6px",
-                              color: prj.status === "PRODUCTION" ? "#3b82f6" : "#f59e0b",
+                              color: prj.status === "PROD" ? "#3b82f6" : "#f59e0b",
                               letterSpacing: "0.08em",
                               borderRadius: "3px",
                               fontWeight: 600,
-                              border: prj.status === "PRODUCTION" ? "1px solid #3b82f6" : "1px solid #f59e0b",
+                              border: prj.status === "PROD" ? "1px solid #3b82f6" : "1px solid #f59e0b",
                               borderStyle: "dashed",
                             }}
                           >
@@ -668,7 +668,7 @@ function CadProjects() {
                             <polyline points="15 3 21 3 21 9" />
                             <line x1="10" y1="14" x2="21" y2="3" />
                           </svg>
-                          <span>LIVE</span>
+                          <span>{/github\.com/.test(prj.link) ? "GITHUB" : "LIVE"}</span>
                         </motion.a>
                       )}
 

@@ -57,7 +57,7 @@ export function Navbar() {
     { name: "HOME", code: "01", href: "/" },
     { name: "WORK", code: "02", href: "/work" },
     { name: "PROJECTS", code: "03", href: "/projects" },
-    { name: "RESUME", code: "04", href: "/resume" },
+    { name: "OTHER", code: "04", href: "/other" },
   ];
 
   return (

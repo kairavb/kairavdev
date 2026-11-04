@@ -18,6 +18,25 @@ const caveat = Caveat({
   weight: "400",
 });
 
+/* ── Live age, computed from birth date 8 Sep 2004 (auto-increments on birthday) ── */
+const BIRTH_DATE = { year: 2004, month: 9, day: 8 };
+function computeAge() {
+  const now = new Date();
+  let age = now.getFullYear() - BIRTH_DATE.year;
+  const month = now.getMonth() + 1;
+  const beforeBirthday =
+    month < BIRTH_DATE.month || (month === BIRTH_DATE.month && now.getDate() < BIRTH_DATE.day);
+  if (beforeBirthday) age--;
+  return age;
+}
+function AgeValue() {
+  const [age, setAge] = useState(computeAge());
+  useEffect(() => {
+    setAge(computeAge());
+  }, []);
+  return <>{age}</>;
+}
+
 /* ── CAD SPEC ICONS ── */
 function BriefcaseIcon() {
   return (
@@ -1167,17 +1186,17 @@ function CadProjects() {
     {
       id: "PRJ-01",
       description: "A cloud-native platform that deploys ML models as scalable inference APIs — automated containerization, model versioning, deployment orchestration, health monitoring, and interactive inference testing.",
-      link: "#",
+      link: "https://github.com/kairavb/model-deployment-platform",
       name: "Cloud-Native AI Deployment Platform",
-      status: "PRODUCTION",
+      status: "PROD",
       tech: ["FastAPI", "React", "PostgreSQL", "Docker", "Prometheus"],
     },
     {
       id: "PRJ-02",
       description: "A backend URL shortening service in Go with clean REST APIs, collision-safe short codes, token-bucket rate limiting, in-memory caching, and load-tested throughput and latency.",
-      link: "https://github.com/kairavb/URL-Shortner",
+      link: "https://github.com/kairavb/URL-Shortener",
       name: "Scalable URL Shortening Service",
-      status: "OPEN_SOURCE",
+      status: "OSS",
       tech: ["Go", "REST APIs", "Caching", "Rate Limiting"],
     },
     {
@@ -1185,7 +1204,7 @@ function CadProjects() {
       description: "A Go CLI that turns natural-language queries into shell commands with clear explanations, a monitoring mode, history logging, and safety-first execution (dry-run, confirmation, and destructive-command warnings).",
       link: "https://github.com/kairavb/go-linux",
       name: "Linux Command-Line Assistant",
-      status: "OPEN_SOURCE",
+      status: "OSS",
       tech: ["Go", "Bash", "Linux", "CLI"],
     },
     {
@@ -1193,7 +1212,7 @@ function CadProjects() {
       description: "A banking backend with account creation, transaction history, fund transfers, and role-based dashboards for users and admins — built on RESTful APIs and structured data models.",
       link: "https://mock-bank.pages.dev/",
       name: "Virtual Banking System",
-      status: "PRODUCTION",
+      status: "PROD",
       tech: ["MongoDB", "Node.js", "Express", "JavaScript"],
     },
     {
@@ -1201,7 +1220,7 @@ function CadProjects() {
       description: "A high-performance backend for a chef-hiring platform — communication, profile management, view tracking, and global browsing of 12+ chefs with sub-200ms name search.",
       link: "https://kairavb.pythonanywhere.com/",
       name: "Chef Hiring Portal",
-      status: "PRODUCTION",
+      status: "PROD",
       tech: ["Flask", "Python", "MySQL", "JavaScript"],
     },
   ];
@@ -1366,7 +1385,7 @@ function CadProjects() {
                             <polyline points="15 3 21 3 21 9" />
                             <line x1="10" y1="14" x2="21" y2="3" />
                           </svg>
-                          <span>LIVE</span>
+                          <span>{/github\.com/.test(prj.link) ? "GITHUB" : "LIVE"}</span>
                         </motion.a>
                       )}
 
@@ -1986,170 +2005,6 @@ function CadAboutMe() {
   );
 }
 
-/* ── CAD STARTUPS & COMMUNITY ── */
-function CadCommunity() {
-  const items = [
-    { id: "ORG-01", role: "Founder", org: "Pipebit.dev", tag: "STARTUP", note: "Delivering custom software and workflow solutions for startups and growing businesses." },
-    { id: "ORG-02", role: "Co-Founder", org: "Devnovate.co", tag: "STARTUP", note: "A developer platform for hackathons, projects, networking, and career opportunities." },
-    { id: "ORG-03", role: "Co-Founder", org: "Snyco.ai", tag: "STARTUP", note: "Building AI-powered workflow automation and productivity solutions for the public." },
-    { id: "ORG-04", role: "Community Partner", org: "HackWithIndia", tag: "COMMUNITY", note: "Supporting hackathon operations and community engagement." },
-    { id: "ORG-05", role: "Mentor", org: "National & International Hackathons", tag: "MENTORSHIP", note: "Mentored 100+ teams on software development and technical problem-solving." },
-  ];
-
-  return (
-    <div
-      id="community"
-      style={{
-        backgroundColor: "var(--line-fill)",
-        border: "1px solid var(--line-stroke-accent)",
-        fontFamily: "var(--font-geist-mono)",
-        fontSize: "12px",
-        marginTop: "24px",
-        position: "relative",
-      }}
-    >
-      {/* Header Bar */}
-      <div
-        style={{
-          alignItems: "center",
-          backgroundColor: "var(--line-fill-accent)",
-          borderBottom: "1px solid var(--line-stroke-accent)",
-          color: "var(--nav-link-hover)",
-          display: "flex",
-          fontSize: "11px",
-          justifyContent: "space-between",
-          letterSpacing: "0.1em",
-          padding: "10px 14px",
-        }}
-      >
-        <div style={{ alignItems: "center", display: "flex", gap: "8px" }}>
-          <span style={{ backgroundColor: "#ec4899", borderRadius: "50%", display: "inline-block", height: "6px", width: "6px" }} />
-          <span>Startups &amp; Community</span>
-        </div>
-        <span>TOTAL: 0{items.length}_VENTURES</span>
-      </div>
-
-      {/* Entries */}
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        {items.map((it, index) => (
-          <div
-            key={it.id}
-            style={{
-              backgroundColor: "var(--background)",
-              borderBottom: index === items.length - 1 ? "none" : "1px solid var(--line-stroke)",
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px",
-              padding: "14px 16px",
-            }}
-          >
-            <div style={{ alignItems: "center", display: "flex", flexWrap: "wrap", gap: "10px" }}>
-              <span style={{ color: "var(--foreground)", fontSize: "14px", fontWeight: 600 }}>{it.org}</span>
-              <span
-                style={{
-                  border: "1px solid var(--line-stroke-accent)",
-                  borderRadius: "2px",
-                  color: "var(--nav-link)",
-                  fontSize: "8px",
-                  letterSpacing: "0.08em",
-                  padding: "2px 6px",
-                }}
-              >
-                {it.tag}
-              </span>
-            </div>
-            <span style={{ color: "var(--nav-link-hover)", fontSize: "11px", fontWeight: 500 }}>{it.role}</span>
-            <span style={{ color: "var(--nav-link-hover)", fontSize: "12px", lineHeight: "1.6" }}>{it.note}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ── CAD ACHIEVEMENTS & CERTIFICATIONS ── */
-function CadAchievements() {
-  const achievements = [
-    "Published research paper — “Temporal Image-Based Pseudo-Random Bit Generator: Harnessing Time Seeds and Input Images”, a nature-dependent random number generating algorithm.",
-    "Ranked 3,228th in the ICPC 2026 Online Challenge 1, powered by Huawei.",
-    "Solved 800+ algorithmic problems across LeetCode, Codeforces, and TakeUForward over 50+ contests.",
-    "1st place — Web Technologies quiz competition at VIPS-TC, Pitampura.",
-    "1st place — Debugging competition at Amity University, Noida.",
-    "Reached the highest competitive league on Chess.com.",
-  ];
-  const certs = [
-    "Harvard CS50x — Introduction to Computer Science (10 problem sets + final project)",
-    "TakeUForward DSA Course & A2Z Sheet",
-  ];
-
-  return (
-    <div
-      id="achievements"
-      style={{
-        backgroundColor: "var(--line-fill)",
-        border: "1px solid var(--line-stroke-accent)",
-        fontFamily: "var(--font-geist-mono)",
-        fontSize: "12px",
-        marginTop: "24px",
-        position: "relative",
-      }}
-    >
-      {/* Header Bar */}
-      <div
-        style={{
-          alignItems: "center",
-          backgroundColor: "var(--line-fill-accent)",
-          borderBottom: "1px solid var(--line-stroke-accent)",
-          color: "var(--nav-link-hover)",
-          display: "flex",
-          fontSize: "11px",
-          justifyContent: "space-between",
-          letterSpacing: "0.1em",
-          padding: "10px 14px",
-        }}
-      >
-        <div style={{ alignItems: "center", display: "flex", gap: "8px" }}>
-          <span style={{ backgroundColor: "#eab308", borderRadius: "50%", display: "inline-block", height: "6px", width: "6px" }} />
-          <span>Achievements &amp; Certifications</span>
-        </div>
-        <span>TOTAL: 0{achievements.length}_RECORDS</span>
-      </div>
-
-      {/* Achievements list */}
-      <ul style={{ backgroundColor: "var(--background)", display: "flex", flexDirection: "column", gap: "12px", listStyle: "none", margin: 0, padding: "16px" }}>
-        {achievements.map((a, i) => (
-          <li key={i} style={{ color: "var(--nav-link-hover)", display: "flex", fontSize: "12px", gap: "12px", lineHeight: "1.6" }}>
-            <span style={{ color: "var(--line-stroke-accent)", fontSize: "10px", marginTop: "1px" }}>▪</span>
-            <span>{a}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Certifications */}
-      <div style={{ backgroundColor: "var(--background)", borderTop: "1px dashed var(--line-stroke)", display: "flex", flexDirection: "column", gap: "10px", padding: "16px" }}>
-        <div style={{ color: "var(--nav-link)", fontSize: "9px", letterSpacing: "0.1em" }}>CERTIFICATIONS //</div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-          {certs.map((c) => (
-            <span
-              key={c}
-              style={{
-                backgroundColor: "var(--line-fill)",
-                border: "1px solid var(--line-stroke-accent)",
-                borderRadius: "4px",
-                color: "var(--foreground)",
-                fontSize: "11px",
-                padding: "6px 11px",
-              }}
-            >
-              {c}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Page() {
   return (
     <main style={{ display: "contents" }}>
@@ -2345,7 +2200,7 @@ export default function Page() {
                 whiteSpace: "nowrap",
               }}
             >
-              23
+              <AgeValue />
             </span>
           </div>
 
@@ -2852,6 +2707,37 @@ export default function Page() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
                 <span>Blog</span>
               </a>
+
+              {/* Resume (PDF) */}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  alignItems: "center",
+                  backgroundColor: "var(--background)",
+                  border: "1px solid var(--line-stroke)",
+                  borderRadius: "4px",
+                  color: "var(--foreground)",
+                  display: "flex",
+                  fontSize: "11px",
+                  gap: "6px",
+                  padding: "5px 10px",
+                  textDecoration: "none",
+                  transition: "all 0.2s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--line-stroke-accent)";
+                  e.currentTarget.style.backgroundColor = "var(--line-fill-accent)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--line-stroke)";
+                  e.currentTarget.style.backgroundColor = "var(--background)";
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><line x1="10" y1="9" x2="8" y2="9" /></svg>
+                <span>Resume</span>
+              </a>
             </div>
           </div>
           {/* CAD GITHUB CONTRIBUTION CHART */}
@@ -2874,12 +2760,6 @@ export default function Page() {
 
           {/* CAD PROJECTS SCHEMA */}
           <CadProjects />
-
-          {/* CAD STARTUPS & COMMUNITY */}
-          <CadCommunity />
-
-          {/* CAD ACHIEVEMENTS & CERTIFICATIONS */}
-          <CadAchievements />
 
           {/* INSPIRED BY — single line credit */}
           <div
