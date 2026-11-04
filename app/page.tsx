@@ -37,6 +37,173 @@ function AgeValue() {
   return <>{age}</>;
 }
 
+/* ── Favorite song: CAD-styled audio player ──
+   Drop your audio file at public/favorite-song.mp3 (or change FAV_SONG.src below)
+   and edit the title / artist. The player hides itself until the file exists. */
+const FAV_SONG = {
+  title: "Earth (Drumstep)",
+  artist: "K-391 · NCS",
+  src: "/favorite-song.mp3",
+};
+
+function fmtTime(s: number) {
+  if (!Number.isFinite(s)) return "0:00";
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, "0")}`;
+}
+
+function FavoriteSong() {
+  const [available, setAvailable] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [current, setCurrent] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Only show the player once the audio file actually exists.
+  useEffect(() => {
+    let active = true;
+    fetch(FAV_SONG.src, { method: "HEAD" })
+      .then((r) => { if (active && r.ok) setAvailable(true); })
+      .catch(() => {});
+    return () => { active = false; };
+  }, []);
+
+  const toggle = () => {
+    const a = audioRef.current;
+    if (!a) return;
+    if (a.paused) a.play().catch(() => {});
+    else a.pause();
+  };
+
+  const seek = (e: React.MouseEvent<HTMLDivElement>) => {
+    const a = audioRef.current;
+    if (!a || !a.duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    a.currentTime = ((e.clientX - rect.left) / rect.width) * a.duration;
+  };
+
+  if (!available) return null;
+
+  const pct = duration ? (current / duration) * 100 : 0;
+
+  return (
+    <div
+      style={{
+        backgroundColor: "var(--line-fill)",
+        border: "1px solid var(--line-stroke-accent)",
+        fontFamily: "var(--font-geist-mono)",
+        fontSize: "12px",
+        marginTop: "16px",
+        position: "relative",
+      }}
+    >
+      <audio
+        ref={audioRef}
+        src={FAV_SONG.src}
+        loop
+        preload="metadata"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onTimeUpdate={(e) => setCurrent(e.currentTarget.currentTime)}
+        onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+      />
+
+      {/* Header Bar */}
+      <div
+        style={{
+          alignItems: "center",
+          backgroundColor: "var(--line-fill-accent)",
+          borderBottom: "1px solid var(--line-stroke-accent)",
+          color: "var(--nav-link-hover)",
+          display: "flex",
+          fontSize: "10px",
+          justifyContent: "space-between",
+          letterSpacing: "0.1em",
+          padding: "8px 14px",
+        }}
+      >
+        <div style={{ alignItems: "center", display: "flex", gap: "8px" }}>
+          <span style={{ backgroundColor: "#22c55e", borderRadius: "50%", display: "inline-block", height: "6px", width: "6px" }} />
+          <span>On Repeat</span>
+        </div>
+        <span>{playing ? "PLAYING" : "PAUSED"}</span>
+      </div>
+
+      {/* Player Body */}
+      <div style={{ alignItems: "center", backgroundColor: "var(--background)", display: "flex", gap: "14px", padding: "14px" }}>
+        {/* Play / Pause */}
+        <button
+          onClick={toggle}
+          aria-label={playing ? "Pause" : "Play"}
+          style={{
+            alignItems: "center",
+            backgroundColor: "var(--foreground)",
+            border: "none",
+            borderRadius: "50%",
+            color: "var(--background)",
+            cursor: "pointer",
+            display: "flex",
+            flexShrink: 0,
+            height: "40px",
+            justifyContent: "center",
+            width: "40px",
+          }}
+        >
+          {playing ? (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
+          ) : (
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ marginLeft: "2px" }}><path d="M8 5v14l11-7z" /></svg>
+          )}
+        </button>
+
+        {/* Equalizer */}
+        <div style={{ alignItems: "flex-end", display: "flex", gap: "3px", height: "24px", flexShrink: 0 }}>
+          {[0, 1, 2, 3, 4].map((i) => (
+            <span
+              key={i}
+              style={{
+                backgroundColor: "var(--foreground)",
+                borderRadius: "1px",
+                display: "block",
+                height: "24px",
+                opacity: 0.85,
+                transformOrigin: "bottom",
+                transform: playing ? undefined : "scaleY(0.25)",
+                width: "3px",
+                animation: "eq 0.9s ease-in-out infinite",
+                animationDelay: `${i * 0.13}s`,
+                animationPlayState: playing ? "running" : "paused",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Title + progress */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "6px", minWidth: 0, width: "100%" }}>
+          <div style={{ alignItems: "baseline", display: "flex", gap: "8px", justifyContent: "space-between" }}>
+            <span style={{ color: "var(--foreground)", fontSize: "13px", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              {FAV_SONG.title}
+            </span>
+            <span style={{ color: "var(--nav-link)", flexShrink: 0, fontSize: "10px" }}>
+              {fmtTime(current)} / {fmtTime(duration)}
+            </span>
+          </div>
+          <span style={{ color: "var(--nav-link)", fontSize: "11px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+            {FAV_SONG.artist}
+          </span>
+          <div
+            onClick={seek}
+            style={{ backgroundColor: "var(--line-stroke)", borderRadius: "2px", cursor: "pointer", height: "4px", overflow: "hidden", width: "100%" }}
+          >
+            <div style={{ backgroundColor: "var(--foreground)", height: "100%", width: `${pct}%` }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── CAD SPEC ICONS ── */
 function BriefcaseIcon() {
   return (
@@ -2740,6 +2907,9 @@ export default function Page() {
               </a>
             </div>
           </div>
+          {/* FAVORITE SONG PLAYER */}
+          <FavoriteSong />
+
           {/* CAD GITHUB CONTRIBUTION CHART */}
           <CadGithubChart />
 

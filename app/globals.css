@@ -128,6 +128,12 @@ body {
   }
 }
 
+/* Equalizer bars for the favorite-song player */
+@keyframes eq {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
 /* Wave animation for greeting emoji */
 @keyframes wave {
   0% {
